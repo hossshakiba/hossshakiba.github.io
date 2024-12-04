@@ -1,0 +1,20 @@
+{
+    "educations": [
+        {
+            "image" : "/images/tuda.png",
+            "university": "Technical University of Darmstadt",
+            "degree": "MS, Artificial Intelligence & Machine Learning",
+            "date": "October 2024 - Present",
+            "details":[]
+        },
+        {
+            "image" : "/images/buali.png",
+            "university": "Bu-Ali Sina University",
+            "degree": "BS, Computer Engineering",
+            "date": "September 2019 - March 2024",
+            "details": [
+                "GPA: 18.19/20 - 1st Rank"
+            ]
+        }
+    ]
+}

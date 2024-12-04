@@ -1,0 +1,46 @@
+{
+    "news": [
+        {
+            "date": "Ocotber 2024",
+            "text": [
+                "Our ",
+                {
+                    "word": "CDAN ",
+                    "url": "https://arxiv.org/abs/2308.12902"
+                },
+                " paper is Accepted to ",
+                {
+                    "word":"DSP ",
+                    "url":"https://www.sciencedirect.com/journal/digital-signal-processing"
+                },
+                "Journal! 🥂"
+            ]
+        },
+        {
+            "date": "April 2024",
+            "text": [
+                "I am Admitted to the ",
+                {
+                    "word":"MSCS ",
+                    "url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science"
+                },
+                "program at Geogia Tech for Fall 2024! 🥳"
+            ]
+        },
+        {
+            "date": "March 2024",
+            "text": ["Graduated from Bu-Ali Sina University with a Bachelor's in Computer Engineering! 🎓"]
+        },
+        {
+            "date": "February 2024",
+            "text": [
+                "Our Paper on Detection and Grading Diabetic Retinopathy is Accepted to ",
+                {
+                    "word": "BSPC ",
+                    "url": "https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control"
+                },
+                "Journal! 🥂"
+            ]
+        }
+    ]
+}

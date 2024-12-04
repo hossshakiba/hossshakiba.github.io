@@ -1,0 +1,40 @@
+{
+    "experience": [
+        {
+            "position": "Undergraduate Student Researcher",
+            "laboratory": "Robot Intelligence & Vision Laboratory",
+            "logo": "/images/experience/robot.svg",
+            "type": "Part-time",
+            "date": "May 2023 - June 2024 ",
+            "information": [
+                "Under the supervision of Prof. Hassan Khotanlou.",
+                "Collaborated on a project focused on cloud removal from satellite imagery.",
+                "Proposed an autoencoder-based model for low-light light image enhancement.",
+                "Published a journal paper."
+            ]
+        },
+        {
+            "position": "Undergraduate Student Researcher",
+            "laboratory": "Intelligent Systems & Machine Learning Lab",
+            "logo": "/images/buali.png",
+            "type": "Part-time",
+            "date": "October 2022 - April 2023",
+            "information": [
+                "Under the supervision of Prof. Muharram Mansoorizadeh.",
+                "Proposed a framework and a dataset for detecting and grading diabetic retinopathy.",
+                "Published a journal paper and assisted in reviewing multiple research papers."
+            ]
+        },
+        {
+            "position": "Software Developer",
+            "laboratory": "Robot Intelligence & Vision Laboratory",
+            "logo": "/images/experience/vis.png",
+            "type": "Part-time",
+            "date": "October 2021 - March 2023",
+            "information": [
+                "An all-in-one platform for training & deploying deep learning-based computer vision models.",
+                "Developed multiple services within Software and AI teams, including dataset preparation, data augmentation pipeline, image tiling, dataset health-check, backend APIs, etc. using Python, PyTorch, and Django."
+            ]
+        }
+    ]
+}
