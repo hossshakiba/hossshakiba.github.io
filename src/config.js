@@ -1,1 +1,1 @@
-export const BASE_URL = '/hossshakiba.github.io';
+export const BASE_URL = '';
