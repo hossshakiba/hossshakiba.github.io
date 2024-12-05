@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Hossein Shakibania",
-  description: "MS Student in Computer Science",
+  description: "MS Student in AIML",
 };
 
 export default function RootLayout({ children }) {
