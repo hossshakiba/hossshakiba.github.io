@@ -8,7 +8,7 @@ const Educations = (props) => {
             <div id="Educations" className="scroll-mt-48"></div>
             {props.showEducation &&
                 <div className="md:ml-5 lg:ml-10 xl:ml-20 flex">
-                    <Image alt="" width={100} height={100} className="w-20 h-20 lg:mr-10" src={BASE_URL + props.educationData.image} />
+                    <Image alt="" width={100} height={100} className="w-20 h-20 lg:mr-5" src={BASE_URL + props.educationData.image} />
                     <div className="text-gray-dark flex">
                         <div className="">
                             <div className="w-2 h-2 mx-3 lg:mx-7 bg-[#BCC0C2] rounded-full my-3"></div>
