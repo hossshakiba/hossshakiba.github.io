@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Hossein Shakibania",
   description: "MS Student in AIML",
+  icons: {
+    icon: "/favicon.png",
+  }
 };
 
 export default function RootLayout({ children }) {

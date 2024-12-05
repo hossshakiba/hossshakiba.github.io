@@ -17,7 +17,7 @@ const AcademicService = () => {
                   {academic.conferences.map((conference, index) =>
                     <div className="flex items-center mr-5 my-2">
                       <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 mr-2 md:mr-3 bg-[#4D4D4D] rounded-full"></span>
-                      <p key={index} className="w-[90%] font-semibold">{conference.name}<span className="font-normal">{` (${conference.papers}Papers)`}</span></p>
+                      <p key={index} className="w-[90%] font-semibold">{conference.name}<span className="font-normal">{` (${conference.papers} papers)`}</span></p>
                     </div>
                   )}
                 </div>

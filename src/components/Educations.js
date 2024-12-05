@@ -9,7 +9,7 @@ const Educations = (props) => {
             {props.showEducation && (
                 <div className="md:ml-5 lg:ml-10 xl:ml-20 flex">
                     {/* Image Section */}
-                    <div className="flex-shrink-0 w-24 h-24 lg:mr-5 relative">
+                    <div className="flex-shrink-0 w-20 h-20 lg:mr-5 relative">
                         <Image
                             alt="Education Image"
                             src={BASE_URL + props.educationData.image}

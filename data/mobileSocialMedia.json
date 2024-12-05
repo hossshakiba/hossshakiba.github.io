@@ -3,32 +3,32 @@
         {
             "alt": "mail",
             "image": "/images/mobileSocialMedia/mail.svg",
-            "link": ""
+            "link": "mailto:shakibaia.hossein@gmail.com"
         },
         {
             "alt": "googleScholar",
             "image": "/images/mobileSocialMedia/googleScholar.svg",
-            "link": ""
+            "link": "https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1"
         },
         {
             "alt": "X",
             "image": "/images/mobileSocialMedia/X.svg",
-            "link": ""
+            "link": "https://x.com/hossshakiba"
         },
         {
             "alt": "LinkedIn",
             "image": "/images/mobileSocialMedia/linkedin.svg",
-            "link": ""
+            "link": "https://www.linkedin.com/in/hossein-shakibania"
         },
         {
             "alt": "github",
             "image": "/images/mobileSocialMedia/github.svg",
-            "link": ""
+            "link": "https://github.com/hossshakiba"
         },
         {
             "alt": "cv",
             "image": "/images/mobileSocialMedia/cv.svg",
-            "link": ""
+            "link": "/CV/CV_Shakibania.pdf"
         }
     ]
 }

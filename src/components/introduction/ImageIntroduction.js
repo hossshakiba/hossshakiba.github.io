@@ -16,7 +16,7 @@ const ImageIntroduction = () => {
             <Image alt="" src={introductionRectangle3} className="absolute right-0 -top-4 lg:-top-2 xl:-top-20 xl:hidden w-[22rem] lg:w-[30rem] h-[47rem] lg:h-[40rem]" />
             <div className="absolute top-[9rem] lg:top-[9rem] xl:top-[10rem] 3xl:top-[11rem] 2xl:bg-cover right-[2%] lg:right-[10%] xl:right-[16%] 2xl:right-[19%] 3xl:right-[18%] flex flex-col items-center">
                 <Image alt="" src={person} className="w-[20rem] h-[20rem] 3xl:w-[25rem] 3xl:h-[25rem]" />
-                <p className="mt-5 3xl:mt-6 text-xl 3xl:text-2xl text-center">MS in AIML
+                <p className="mt-5 3xl:mt-6 text-xl 3xl:text-2xl text-center">MS Student in AIML
                     <br />
                     TU Darmstadt</p>
                 <ul className="flex items-center [&>*]:mx-3 mt-5 3xl:mt-6">
