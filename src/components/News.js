@@ -16,9 +16,12 @@ const News = (props) => {
                     <h1 className="text-gray-dark text-xl xl:text-2xl 2xl:text-3xl">News</h1>
                     <DateText showAll={showAllNews} data={props.data.news} button={'see all News'} />
                 </div> 
-                    <button className="text-xs md:text-sm xl:text-base text-[#748595] mx-auto flex mt-7" onClick={() => setShowAllNews(!showAllNews)}>
+                    {
+                        props.data.news.length > 5 &&
+                        <button className="text-xs md:text-sm xl:text-base text-[#748595] mx-auto flex mt-7" onClick={() => setShowAllNews(!showAllNews)}>
                         {showAllNews ? `show less` :`show more`}
                     </button>
+                    }
             </div>
         </div>
     );

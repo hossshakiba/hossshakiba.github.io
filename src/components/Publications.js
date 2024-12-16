@@ -26,10 +26,10 @@ const Publications = (props) => {
       <div className="container m-auto px-7 lg:px-10 xl:px-20 2xl:px-28 3xl:px-44 pt-8 md:pt-16">
         <div className="">
           <p className="text-gray-dark  text-xl xl:text-2xl 2xl:text-3xl mb-3">Publications</p>
-          <p className="text-[#606060] text-sm ">For a complete list of my research works, please look up my <a className="text-blue-500" href="https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1">google scholar</a>.</p>
+          <p className="text-[#606060] text-sm ">For a complete list of my research works, please look up my <a className="text-blue-500" href="https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1">Google Scholar</a>.</p>
         </div>
         <div className="flex flex-col items-center justify-center pt-8 xl:pt-16">
-          {props.data.publications.slice(0, 2).map((publication, index) =>
+          {props.data.publications.slice(0, 3).map((publication, index) =>
             <Cart setCartTitle={setCartTitle} setShowModal={setShowModal} setModalData={setModalData} key={index} author={true} data={publication} />
           )}
         </div>
@@ -38,11 +38,14 @@ const Publications = (props) => {
             <Cart setCartTitle={setCartTitle} setShowModal={setShowModal} setModalData={setModalData} key={index} author={true} data={publication} />
           )}
         </div>
-        <button className="text-[#748595] text-xs md:text-sm xl:text-base bg-primary1 mt-6 py-2 px-4 rounded-lg mx-auto flex mb-10"
-          onClick={() => setShowAllPublications(!showAllPublications)}
-        >
-          {showAllPublications ? 'show less' : 'show more'}
-        </button>
+          {
+            props.data.publications.length > 3 &&
+            <button className="text-[#748595] text-xs md:text-sm xl:text-base bg-primary1 mt-6 py-2 px-4 rounded-lg mx-auto flex mb-10"
+            onClick={() => setShowAllPublications(!showAllPublications)}
+          >
+            {showAllPublications ? 'show less' : 'show more'}
+          </button>
+          }
       </div>
     </div>
   );

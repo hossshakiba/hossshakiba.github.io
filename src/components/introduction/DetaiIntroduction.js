@@ -19,7 +19,7 @@ const DetaiIntroduction = (props) => {
                     under the supervision of Prof. Hassan Khotanlou (RIV Lab) and Prof. Muharram Mansoorizadeh.
                 </p>
                 <p className=" text-gray-dark text-sm md:text-base 2xl:text-lg 3xl:text-xl text-justify mt-2 xl:mt-3 3xl:mt-5">
-                    My research focuses on Computer Vision, with a particular passion for Generative Models and Multimodality, especially their applications in Text2Image, Editing, and Creative AI.
+                    My primary interest is in Computer Vision, with a particular passion for Generative Models and Multimodality, especially their applications in Text2Image, Editing, and Creative AI.
                 </p>
                 <p className="text-gray-dark text-sm md:text-base 2xl:text-lg 3xl:text-xl text-justify mt-2 xl:mt-3 3xl:mt-5">
                     Feel free to reach out. Let’s chat over a (virtual) coffee! ☕

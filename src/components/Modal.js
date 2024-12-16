@@ -8,6 +8,14 @@ const Modal = (props) => {
     const data2 = { ...props.data };
     const keys = Reflect.ownKeys(data2);
     if (keys.length) delete data2[keys[0]];
+
+    // Remove trailing comma logic
+    const bibEntries = Object.entries(data2);
+    const formattedBibEntries = bibEntries.map((entry, index) => {
+        const isLast = index === bibEntries.length - 1;
+        return `${entry[0]}=${'{' + entry[1] + '}'}` + (!isLast ? ',' : '');
+    });
+
     const [isCopied, setIsCopied] = useState(false);
 
     const copyTextHandler = async () => {
@@ -56,22 +64,24 @@ const Modal = (props) => {
                 </div>
 
                 {/* BibTex Content */}
-                <div className="relative bg-[#f9fafb] max-h-[12rem] w-full mt-3 py-2 px-2 sm:px-4 rounded-md flex overflow-y-auto text-sm sm:text-base">
-                    <div id="bibText" className="leading-relaxed">
+                <div className="relative bg-[#f9fafb] max-h-[12rem] w-full mt-3 py-2 px-2 sm:px-4 rounded-md overflow-y-auto overflow-x-auto text-sm sm:text-base">
+                    <div id="bibText" className="leading-relaxed whitespace-pre">
                         <div>
                             <span className="text-red-600 font-bold">{data1[0]}</span>
                             <span className="text-purple-700 font-medium">{`{${data1[1]},`}</span>
                         </div>
                         <div className="pl-3">
-                            {Object.entries(data2).map((entry, index) => (
-                                <div key={index}>{`${entry[0]}=${'{' + entry[1] + '},'}`}</div>
+                            {formattedBibEntries.map((entry, index) => (
+                                <div key={index}>
+                                    <span className="text-blue-700 font-semibold">{entry}</span>
+                                </div>
                             ))}
                         </div>
-                        <div className="pl-1">{'}'}</div>
+                        <div className="pl-1 text-purple-700">{'}'}</div>
                     </div>
 
                     {/* Copy Button */}
-                    <div className="flex absolute right-3 top-3">
+                    <div className="flex absolute right-3 top-3 sm:top-auto sm:bottom-3">
                         <div
                             className={`transition-opacity duration-300 ${
                                 isCopied ? 'opacity-100' : 'opacity-0'

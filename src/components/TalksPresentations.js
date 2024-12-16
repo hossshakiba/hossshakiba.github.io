@@ -19,7 +19,7 @@ const TalksPresentations = (props) => {
           <p className="text-gray-dark  text-xl xl:text-2xl 2xl:text-3xl mb-3">Talks & Presentations</p>
         </div>
         <div className="flex flex-col items-center justify-center pt-8 xl:pt-16">
-          {props.data.TalksPresentations.slice(0, 2).map((talksPresentations, index) =>
+          {props.data.TalksPresentations.slice(0, 3).map((talksPresentations, index) =>
             <Cart key={index} author={false} data={talksPresentations} />
           )}
         </div>
@@ -28,11 +28,14 @@ const TalksPresentations = (props) => {
             <Cart key={index} author={false} data={talksPresentations} />
           )}
         </div>
-        <button className="text-[#748595] text-xs md:text-sm xl:text-base bg-primary1 mt-6 py-2 px-4 rounded-lg mx-auto flex mb-10"
-          onClick={() => setShowAllTalksPresentations(!showAllTalksPresentations)}
-        >
-          {showAllTalksPresentations ? 'show less' : `show more`}
-        </button>
+          {
+            props.data.TalksPresentations.length > 3 &&
+            <button className="text-[#748595] text-xs md:text-sm xl:text-base bg-primary1 mt-6 py-2 px-4 rounded-lg mx-auto flex mb-10"
+            onClick={() => setShowAllTalksPresentations(!showAllTalksPresentations)}
+          >
+            {showAllTalksPresentations ? 'show less' : `show more`}
+          </button>
+          }
       </div>
     </div>
   )
