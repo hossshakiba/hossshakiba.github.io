@@ -7,7 +7,7 @@ export const metadata = {
   title: "Hossein Shakibania",
   description: "MS Student in AIML",
   icons: {
-    icon: "/favicon.png",
+    icon: "/pizza.png",
   }
 };
 
