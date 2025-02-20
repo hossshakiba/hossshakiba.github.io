@@ -52,8 +52,8 @@ const ExperienceCart = (props) => {
                             <div>
                                 {props.data.information.slice(2).map((info, index) =>
                                     <div key={index} className="flex mb-1 text-xs sm:text-sm text-[#4D4D4D]">
-                                        <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 mt-1.5 sm:mt-2 mr-3 sm:mr-5 bg-[#4D4D4D] rounded-full"></span>
-                                        <p className="w-[90%] md:w-full">{info}</p>
+                                    <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 mt-[7px] sm:mt-2 mr-1 sm:mr-2 bg-[#4D4D4D] rounded-full"></span>
+                                    <p className="w-[90%] md:w-full">{info}</p>
                                     </div>
                                 )}
                             </div>}
