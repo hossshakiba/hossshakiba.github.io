@@ -30,17 +30,22 @@ const ExperienceCart = (props) => {
                 <div className="text-[#313C44] ml-16 md:ml-20 lg:ml-28">
                     <p className="lg:text-lg xl:text-xl 2xl:text-2xl font-semibold">{props.data.position}</p>
                     <div className="text-xs sm:text-sm md:text-base">
-                        <p className="">{props.data.laboratory}</p>
+                            {props.data.url ? (
+                            <p className=""><a href={props.data.url}>{props.data.laboratory}</a></p>
+                            ) : (
+                                <p className="">{props.data.laboratory}</p>
+                            )}
+                        
                         <p>{props.data.type}</p>
                         <p className="text-[#787F85]">{props.data.date}</p>
                     </div>
                     <div className="mt-2">
-                        {props.data.information.slice(0, 2).map((info, index) =>
-                            <div key={index} className="flex mb-1 text-xs sm:text-sm text-[#4D4D4D]">
-                                <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 mt-[7px] sm:mt-2 mr-3 sm:mr-5 bg-[#4D4D4D] rounded-full"></span>
-                                <p className="w-[90%] md:w-full">{info}</p>
-                            </div>
-                        )}
+                    {props.data.information.slice(0, 2).map((info, index) => (
+                        <div key={index} className="flex mb-1 text-xs sm:text-sm text-[#4D4D4D]">
+                        <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 mt-[7px] sm:mt-2 mr-1 sm:mr-2 bg-[#4D4D4D] rounded-full"></span>
+                        <p className="w-[90%] md:w-full">{info}</p>
+                        </div>
+                    ))}
                     </div>
                     <div className={`${showAll ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 ease-out`}>
                         {showAll &&
