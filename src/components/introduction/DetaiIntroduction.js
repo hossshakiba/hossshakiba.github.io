@@ -18,7 +18,7 @@ const DetaiIntroduction = (props) => {
                     I am an MS student in <a className="text-blue-500" href="https://www.informatik.tu-darmstadt.de/studium_fb20/im_studium/studiengaenge_liste/aim_msc.en.jsp"> Artificial Intelligence and Machine Learning</a> at the Technical University of Darmstadt and a student research assistant at the <a className="text-blue-500" href="https://www.informatik.tu-darmstadt.de/mai/multimodal_ai/index.en.jsp">Multimodal AI Lab</a>, led by <a className="text-blue-500" href="https://scholar.google.com/citations?user=3kDtybgAAAAJ&hl=en">Prof. Marcus Rohrbach</a> and <a className="text-blue-500" href="https://scholar.google.com/citations?user=GHpxNQIAAAAJ&hl=en">Prof. Anna Rohrbach</a>. I completed my BS in Computer Engineering in 2024 at Bu-Ali Sina University.
                 </p>
                 <p className=" text-gray-dark text-sm md:text-base 2xl:text-lg 3xl:text-xl text-justify mt-2 xl:mt-3 3xl:mt-5">
-                    I am broadly interested in Generative Models and Multimodality, especially their applications in Content Creation, Controllable Editing, and Creative AI.
+                    I am broadly interested in Generative Vision Models and Multimodality, especially their applications in Content Creation, Controllable Editing, and Creative AI.
                 </p>
                 <p className="text-gray-dark text-sm md:text-base 2xl:text-lg 3xl:text-xl text-justify mt-2 xl:mt-3 3xl:mt-5">
                     Feel free to reach out. I'm open to collaborations!

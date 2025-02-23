@@ -18,7 +18,7 @@ const HonorsAwards = (props) => {
           <DateText showAll={showAllAwards} data={props.data.awards} />
         </div>
         {
-          props.data.awards.length > 5 &&
+          props.data.awards.length >= 5 &&
           <button className="text-[#748595] text-xs md:text-sm xl:text-base mx-auto mt-7 flex" onClick={() => setShowAllAwards(!showAllAwards)}>
           {showAllAwards ? `show less` :`show more`}
         </button>

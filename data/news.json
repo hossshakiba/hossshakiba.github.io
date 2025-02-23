@@ -1,6 +1,17 @@
 {
     "news": [
         {
+            "date": "April 2025",
+            "text": [
+                "I joined the ",
+                {
+                    "word": "Multimodal AI Lab ",
+                    "url": "https://www.informatik.tu-darmstadt.de/mai/multimodal_ai/index.en.jsp"
+                },
+                "as a Student Research Assistant @ TU Darmstadt."
+            ]
+        },
+        {
             "date": "October 2024",
             "text": [
                 "Our ",

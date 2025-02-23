@@ -17,7 +17,7 @@ const News = (props) => {
                     <DateText showAll={showAllNews} data={props.data.news} button={'see all News'} />
                 </div> 
                     {
-                        props.data.news.length > 5 &&
+                        props.data.news.length >= 5 &&
                         <button className="text-xs md:text-sm xl:text-base text-[#748595] mx-auto flex mt-7" onClick={() => setShowAllNews(!showAllNews)}>
                         {showAllNews ? `show less` :`show more`}
                     </button>
