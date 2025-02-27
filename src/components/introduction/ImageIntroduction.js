@@ -26,10 +26,10 @@ const ImageIntroduction = () => {
                                 <Image
                                     alt={socialMedia.alt}
                                     src={BASE_URL + socialMedia.image}
-                                    width="0"
-                                    height="0"
-                                    sizes="100vw"
-                                    style={{ width: '100%', height: 'auto' }}
+                                    width={30}
+                                    height={30}
+                                    className="max-w-[50px] max-h-[50px] md:max-w-[60px] md:max-h-[60px] lg:max-w-[70px] lg:max-h-[70px]"
+                                    style={{ objectFit: 'contain' }}
                                 />
                             </Link>
                         </li>

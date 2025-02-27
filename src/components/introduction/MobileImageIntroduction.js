@@ -26,8 +26,8 @@ const MobileIntroduction = () => {
               <Image
                   alt={socialMedia.alt}
                   src={BASE_URL + socialMedia.image}
-                  width={25}
-                  height={25}
+                  width={26}
+                  height={26}
                   className="max-w-[50px] max-h-[50px] md:max-w-[60px] md:max-h-[60px] lg:max-w-[70px] lg:max-h-[70px]"
                   style={{ objectFit: 'contain' }}
               />
