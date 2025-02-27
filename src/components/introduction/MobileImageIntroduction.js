@@ -23,14 +23,14 @@ const MobileIntroduction = () => {
           {data.socialMedias.map(socialMedia =>
             <li>
               <Link href={socialMedia.link}>
-                <Image
+              <Image
                   alt={socialMedia.alt}
                   src={BASE_URL + socialMedia.image}
-                  width="0"
-                  height="0"
-                  sizes="100vw"
-                  style={{ width: '100%', height: 'auto' }}
-                />
+                  width={25}
+                  height={25}
+                  className="max-w-[50px] max-h-[50px] md:max-w-[60px] md:max-h-[60px] lg:max-w-[70px] lg:max-h-[70px]"
+                  style={{ objectFit: 'contain' }}
+              />
               </Link>
             </li>
           )}
