@@ -96,7 +96,7 @@ const Cart = (props) => {
             <Link href={props.data.huggingFace}>
               <button className="w-fit py-1 px-2 font-bold text-xs sm:text-sm md:text-base border hover:fill-[#e7be1d] border-[#8CA7C3] hover:border-[#e7be1d] text-[#8CA7C3] hover:text-[#e7be1d] rounded flex items-center">
                 <SiHuggingface />
-                <span className="text-xs ml-1">HuggingFace</span>
+                <span className="text-xs ml-1">Hugging Face</span>
               </button>
             </Link>
           }
