@@ -52,6 +52,14 @@ const Cart = (props) => {
               <span className="text-xs ml-1">BibTeX</span>
             </button>
           }
+          {props.data.website &&
+            <Link href={props.data.url}>
+              <button className="w-fit py-1 px-2 font-bold text-xs sm:text-sm md:text-base border hover:fill-[#EB8317] border-[#8CA7C3] hover:border-[#EB8317] text-[#8CA7C3] hover:text-[#EB8317] rounded flex items-center">
+                <IoEarthSharp />
+                <span className="text-xs ml-1">Project's page</span>
+              </button>
+            </Link>
+          }
           {props.data.pdf &&
             <Link href={props.data.pdf}>
               <button className="w-fit py-1 px-2 font-bold text-xs sm:text-sm md:text-base border hover:fill-[#b31b1b] border-[#8CA7C3] hover:border-[#b31b1b] text-[#8CA7C3] hover:text-[#b31b1b] rounded flex items-center">
@@ -65,14 +73,6 @@ const Cart = (props) => {
               <button className="w-fit py-1 px-2 font-bold text-xs sm:text-sm md:text-base border hover:fill-[#000000] border-[#8CA7C3] hover:border-[#000000] text-[#8CA7C3] hover:text-[#000000] rounded flex items-center">
                 <FaCode />
                 <span className="text-xs ml-1">Code</span>
-              </button>
-            </Link>
-          }
-          {props.data.website &&
-            <Link href={props.data.url}>
-              <button className="w-fit py-1 px-2 font-bold text-xs sm:text-sm md:text-base border hover:fill-[#EB8317] border-[#8CA7C3] hover:border-[#EB8317] text-[#8CA7C3] hover:text-[#EB8317] rounded flex items-center">
-                <IoEarthSharp />
-                <span className="text-xs ml-1">Website</span>
               </button>
             </Link>
           }
