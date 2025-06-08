@@ -39,7 +39,7 @@ const Header = () => {
         <div className='relative'>
             <Script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module" />
             <div className="bg-black fixed w-full z-40 flex justify-between items-center px-7 sm:px-10 lg:px-32 py-4">
-                <div className="flex items-center">
+                <div className="flex items-center -ml-10 sm:ml-0">
                     <dotlottie-player 
                         src="https://lottie.host/52a91e22-eb41-402a-8aa8-b468973c57cb/WHWL3xqQJH.lottie" 
                         background="transparent" 
