@@ -21,9 +21,28 @@ body {
   background: #ffff;
 }
 
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .highlight {
+    background: url('https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=ffb6c1');
+    margin: -2px -6px;
+    padding: 2px 6px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+  }
+
+  .highlight-secondary {
+    background: url('https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=DCE6ED');
+    margin: -2px -6px;
+    padding: 2px 6px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
   }
 }

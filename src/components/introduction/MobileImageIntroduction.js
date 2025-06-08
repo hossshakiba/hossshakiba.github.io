@@ -11,15 +11,15 @@ const MobileIntroduction = () => {
 
   return (
     <div className="md:hidden">
-      <Image alt="" src={mobileintroductionRectangle2} className="absolute left-0 top-20" />
+      {/* <Image alt="" src={mobileintroductionRectangle2} className="absolute left-0 top-20" /> */}
       <div className="">
-        <Image alt="" src={mobileintroductionRectangle1} className="absolute right-0 top-6" />
+        {/* <Image alt="" src={mobileintroductionRectangle1} className="absolute right-0 top-6" /> */}
         <Image alt="" src={person} className="absolute right-4 top-24 w-36 h-36" />
-        <div className="absolute top-[8.5rem] right-[10.5rem]">
-          <p className="text-[#BDC7D1] text-xs">Hello! I’m</p>
-          <p className="text-[#D6E2EF] font-medium">Hossein  Shakibania</p>
+        <div className="absolute top-[8.5rem] left-[2rem]">
+          <p className="text-gray-dark text-sm highlight">Hello! I'm</p><br/>
+          <p className="text-gray-dark font-medium text-xl highlight">Hossein Shakibania</p>
         </div>
-        <ul className="absolute top-[13rem] right-[10rem] flex items-center w-fit rounded-lg [&>*]:mx-1 px-1 3xl:mt-6 bg-[#D5DADE]">
+        <ul className="highlight-secondary absolute top-[13rem] right-[10rem] flex items-center w-fit rounded-lg [&>*]:mx-1 px-1 3xl:mt-6">
           {data.socialMedias.map(socialMedia =>
             <li>
               <Link href={socialMedia.link}>

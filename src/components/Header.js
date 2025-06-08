@@ -37,7 +37,7 @@ const Header = () => {
     return (
         <div className='relative'>
             <div className="bg-black fixed w-full z-40 flex justify-between items-center px-7 sm:px-10 lg:px-32 py-4">
-                <div className="text-[#B1C7DE] text-2xl xl:text-3xl 2xl:text-4xl">
+                <div className="text-[#B1C7DE] text-2xl xl:text-3xl 2xl:text-4xl text-shadows">
                     H o s s
                 </div>
                 {/* Desktop Menu */}
@@ -58,10 +58,10 @@ const Header = () => {
                         <li className={activeSection === 'experienceSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Experience</li>
                         <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'experienceSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
                     </Link>
-                    <Link href="#HonorsSection">
-                        <li className={activeSection === 'HonorsSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Awards</li>
+                    {/* <Link href="#HonorsSection">
+                        <li className={activeSection === 'HonorsSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Achievements</li>
                         <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'HonorsSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
-                    </Link>
+                    </Link> */}
                     {/* <Link href="#TalksSection">
                         <li className={activeSection === 'TalksSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Talks</li>
                         <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'TalksSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>

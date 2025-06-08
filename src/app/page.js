@@ -24,8 +24,8 @@ export default function Home() {
       <News data={news} />
       <Publications data={publications} />
       <Experience data={experience}/>
-      <HonorsAwards data={awards} />
-      <TalksPresentations data={talksPresentations} />
+      {/* <HonorsAwards data={awards} /> */}
+      {/* <TalksPresentations data={talksPresentations} /> */}
       {/* <AcademicService /> */}
     </div>
   );
