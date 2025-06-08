@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from "next/image";
 import menu from '../../public/images/icons/menu.svg';
+import Script from 'next/script';
 
 const Header = () => {
     const [mobileBar, setMobileBar] = useState(false);
@@ -36,9 +37,21 @@ const Header = () => {
 
     return (
         <div className='relative'>
+            <Script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module" />
             <div className="bg-black fixed w-full z-40 flex justify-between items-center px-7 sm:px-10 lg:px-32 py-4">
-                <div className="text-[#B1C7DE] text-2xl xl:text-3xl 2xl:text-4xl text-shadows">
-                    H o s s
+                <div className="flex items-center">
+                    <dotlottie-player 
+                        src="https://lottie.host/52a91e22-eb41-402a-8aa8-b468973c57cb/WHWL3xqQJH.lottie" 
+                        background="transparent" 
+                        speed="1" 
+                        style={{ 
+                            width: '100px', 
+                            height: '50px',
+                            filter: 'hue-rotate(90deg)'
+                        }} 
+                        loop 
+                        autoplay
+                    />
                 </div>
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex space-x-8">
