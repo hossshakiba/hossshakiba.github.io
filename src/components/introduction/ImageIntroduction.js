@@ -61,7 +61,7 @@ const ImageIntroduction = () => {
             <div className="absolute top-[9rem] lg:top-[9rem] xl:top-[10rem] 3xl:top-[11rem] 2xl:bg-cover right-[2%] lg:right-[10%] xl:right-[16%] 2xl:right-[19%] 3xl:right-[18%] flex flex-col items-center">
                 <Image alt="" src={person} className="w-[20rem] h-[20rem] 3xl:w-[25rem] 3xl:h-[25rem]" />
                 <p className="mt-5 3xl:mt-6 text-xl 3xl:text-2xl text-center">
-                    <span className="text-gray-dark font-bold highlight">MS in AIML</span>
+                    <span className="text-gray-dark font-bold highlight">MS Student in AIML</span>
                     <br />
                     <span className="text-gray-dark font-bold highlight-secondary whitespace-nowrap">TU Darmstadt</span>
                 </p>

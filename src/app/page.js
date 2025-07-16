@@ -25,7 +25,7 @@ export default function Home() {
       <Publications data={publications} />
       <Experience data={experience}/>
       {/* <HonorsAwards data={awards} /> */}
-      {/* <TalksPresentations data={talksPresentations} /> */}
+      <TalksPresentations data={talksPresentations} />
       {/* <AcademicService /> */}
     </div>
   );
