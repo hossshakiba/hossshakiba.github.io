@@ -11,6 +11,14 @@ import { SiGooglescholar } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
 import { BsFileEarmarkText } from 'react-icons/bs';
 import { FaXTwitter } from 'react-icons/fa6';
+const focusRingStyles = `
+  focus:outline-none 
+  focus:ring-2
+  focus:ring-blue-500
+  focus-visible:outline-none 
+  focus-visible:ring-2
+  focus-visible:ring-blue-500
+`;
 
 const ImageIntroduction = () => {
     const data = getData('socialMedia.json');
@@ -20,7 +28,7 @@ const ImageIntroduction = () => {
             icon: <MdEmail className="w-5 h-5 mr-2" />,
             text: "Email",
             link: "mailto:shakibaia.hossein@gmail.com",
-            gradient: "from-purple-600 to-blue-500"
+            gradient: "from-red-600 to-orange-300"
         },
         {
             icon: <SiGooglescholar className="w-5 h-5 mr-2" />,
@@ -38,19 +46,19 @@ const ImageIntroduction = () => {
             icon: <FaLinkedin className="w-5 h-5 mr-2" />,
             text: "LinkedIn",
             link: "https://www.linkedin.com/in/hossein-shakibania",
-            gradient: "from-purple-500 to-pink-500"
+            gradient: "from-blue-600 to-blue-900"
         },
         {
             icon: <FaGithub className="w-5 h-5 mr-2" />,
             text: "GitHub",
             link: "https://github.com/hossshakiba",
-            gradient: "from-pink-500 to-orange-400"
+            gradient: "from-purple-600 to-orange-400"
         },
         {
             icon: <FaXTwitter className="w-5 h-5 mr-2" />,
             text: "X (Twitter)",
             link: "https://x.com/hossshakiba",
-            gradient: "from-green-400 to-blue-600"
+            gradient: "from-black to-gray"
         }
     ];
 
