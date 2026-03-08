@@ -29,17 +29,17 @@ const Publications = (props) => {
           <p className="text-[#606060] text-sm ">For a complete list of my research works, please look up my <a className="text-blue-500" href="https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1">Google Scholar</a>.</p>
         </div>
         <div className="flex flex-col items-center justify-center pt-8 xl:pt-16">
-          {props.data.publications.slice(0, 3).map((publication, index) =>
+          {props.data.publications.slice(0, 4).map((publication, index) =>
             <Cart setCartTitle={setCartTitle} setShowModal={setShowModal} setModalData={setModalData} key={index} author={true} data={publication} />
           )}
         </div>
         <div className={`${showAllPublications ? 'opacity-100' : 'opacity-0'} transition-opacity ease-in duration-700 flex flex-col items-center justify-center`}>
-          {showAllPublications && props.data.publications.slice(3).map((publication, index) =>
+          {showAllPublications && props.data.publications.slice(4).map((publication, index) =>
             <Cart setCartTitle={setCartTitle} setShowModal={setShowModal} setModalData={setModalData} key={index} author={true} data={publication} />
           )}
         </div>
           {
-            props.data.publications.length > 3 &&
+            props.data.publications.length > 4 &&
             <button className="text-[#748595] text-xs md:text-sm xl:text-base bg-primary1 mt-6 py-2 px-4 rounded-lg mx-auto flex mb-10"
             onClick={() => setShowAllPublications(!showAllPublications)}
           >

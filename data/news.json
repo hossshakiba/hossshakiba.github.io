@@ -1,6 +1,22 @@
 {
     "news": [
         {
+            "date": "November 2025",
+            "text": [
+                "Ranked 🥇 1st in the ",
+                {
+                    "word": "Rayan International AI Contest",
+                    "url": "https://ai.rayan.global/"
+                },
+                "! The technical report of our solutions is available on ",
+                {
+                    "word": "arXiv",
+                    "url": "https://doi.org/10.48550/arXiv.2512.01498"
+                },
+                "."
+            ]
+        },
+        {
             "date": "April 2025",
             "text": [
                 "I joined ",
@@ -35,7 +51,7 @@
                     "word":"MSCS ",
                     "url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science"
                 },
-                "program at Geogia Tech for Fall 2024! 🥳"
+                "program at Geogia Tech for Fall 2024! 🥳 (My visa was rejected 😔)"
             ]
         },
         {

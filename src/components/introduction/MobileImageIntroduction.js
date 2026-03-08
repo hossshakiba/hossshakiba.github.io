@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import mobileintroductionRectangle1 from '../../../public/images/design/mobileintroductionRectangle1.svg';
 import mobileintroductionRectangle2 from '../../../public/images/design/mobileintroductionRectangle2.svg';
-import person from '../../../public/images/IMG_1457.png';
+import person from '../../../public/images/prof.JPG';
 import { getData } from '../../../lib/getData';
 import Link from 'next/link';
 import { BASE_URL } from '../../config';
@@ -14,7 +14,7 @@ const MobileIntroduction = () => {
       {/* <Image alt="" src={mobileintroductionRectangle2} className="absolute left-0 top-20" /> */}
       <div className="">
         {/* <Image alt="" src={mobileintroductionRectangle1} className="absolute right-0 top-6" /> */}
-        <Image alt="" src={person} className="absolute right-4 top-24 w-36 h-36" />
+        <Image alt="" src={person} className="absolute right-4 top-24 w-36 h-36 rounded-full object-cover" />
         <div className="absolute top-[8.5rem] left-[2rem]">
           <p className="text-gray-dark text-sm highlight">Hello! I'm</p><br/>
           <p className="text-gray-dark font-medium text-xl highlight">Hossein Shakibania</p>

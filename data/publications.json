@@ -1,6 +1,49 @@
 {
   "publications": [
     {
+      "title": "No Trust Issues Here: A Technical Report on the Winning Solutions for the Rayan AI Contest",
+      "journal": "arXiv",
+      "year": "2025",
+      "authors": [
+        {
+          "name": "A. Nafisi",
+          "link": "https://scholar.google.com/citations?user=SM_UuoQAAAAJ&hl=en",
+          "co": false
+        },
+        {
+          "name": "S. Asghari",
+          "link": "https://scholar.google.com/citations?user=3g0TIyAAAAAJ&hl=en&oi=sra",
+          "co": true
+        },
+        {
+          "name": "M. Arvenaghi",
+          "link": "https://scholar.google.com/citations?user=jrVfLFgAAAAJ&hl=en&oi=sra",
+          "co": true
+        },
+        {
+          "name": "H. Shakibania",
+          "link": "https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1",
+          "co": false
+        }
+      ],
+      "image": "/images/publications/rayan.png",
+      "url": "https://doi.org/10.48550/arXiv.2512.01498",
+      "bibtex": {
+        "data": {
+          "@misc": "nafisi2025trustissuesheretechnical",
+          "title": "No Trust Issues Here: A Technical Report on the Winning Solutions for the Rayan AI Contest",
+          "author": "Ali Nafisi and Sina Asghari and Mohammad Saeed Arvenaghi and Hossein Shakibania",
+          "year": "2025",
+          "eprint": "2512.01498",
+          "archivePrefix": "arXiv",
+          "primaryClass": "cs.LG",
+          "url": "https://arxiv.org/abs/2512.01498"
+        }
+      },
+      "pdf": "https://arxiv.org/pdf/2512.01498",
+      "code": "https://github.com/safinal/rayan-ai-contest-solutions"
+    },
+    {
       "title": "CDAN: Convolutional dense attention-guided network for low-light image enhancement",
       "journal": "Digital Signal Processing",
       "year": "2024",
