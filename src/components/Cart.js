@@ -1,12 +1,10 @@
 'use client';
 import Image from 'next/image';
 import { FaQuoteRight } from "react-icons/fa";
-import { FaFilePdf } from "react-icons/fa";
 import { IoEarthSharp } from "react-icons/io5";
 import { FaYoutube } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
-import { SiGoogleslides } from "react-icons/si";
-import { SiHuggingface } from "react-icons/si";
+import { SiGoogleslides, SiHuggingface, SiArxiv } from "react-icons/si";
 import Link from 'next/link';
 import { BASE_URL } from '../config';
 
@@ -76,8 +74,8 @@ const Cart = (props) => {
           {props.data.pdf &&
             <Link href={props.data.pdf}>
               <button className="w-fit py-1 px-2 font-bold text-xs sm:text-sm md:text-base border hover:fill-[#b31b1b] border-[#8CA7C3] hover:border-[#b31b1b] text-[#8CA7C3] hover:text-[#b31b1b] rounded flex items-center">
-                <FaFilePdf />
-                <span className="text-xs ml-1">PDF</span>
+                <SiArxiv />
+                <span className="text-xs ml-1">arXiv</span>
               </button>
             </Link>
           }
