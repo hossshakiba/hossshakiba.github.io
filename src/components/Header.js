@@ -38,7 +38,7 @@ const Header = () => {
     return (
         <div className='relative'>
             <Script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module" />
-            <div className="bg-black fixed w-full z-40 flex justify-between items-center px-7 sm:px-10 lg:px-32 py-4">
+            <div className="bg-black fixed w-full z-40 flex justify-between items-center px-6 sm:px-8 lg:px-12 py-3.5">
                 <div className="flex items-center -ml-10 sm:ml-0">
                     <dotlottie-player 
                         src="https://lottie.host/52a91e22-eb41-402a-8aa8-b468973c57cb/WHWL3xqQJH.lottie" 
@@ -54,7 +54,7 @@ const Header = () => {
                     />
                 </div>
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-8">
+                <ul className="hidden md:flex space-x-7 text-[0.92rem]">
                     <Link href="#aboutSection">
                         <li className={activeSection === 'aboutSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>About</li>
                         <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'aboutSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
@@ -89,7 +89,7 @@ const Header = () => {
                 </button>
             </div>
             {/* {mobileBar && ( */}
-            <div className={`md:hidden fixed top-16 left-0 w-full bg-black text-white font-bold flex flex-col items-start px-7 sm:px-10 pt-4 pb-6 space-y-4
+            <div className={`md:hidden fixed top-16 left-0 w-full bg-black text-white font-semibold text-sm flex flex-col items-start px-6 sm:px-8 pt-4 pb-6 space-y-4
                 ${mobileBar ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'}
                 transform transition-all duration-500 ease-in-out z-20`}>
                 <Link href="#aboutSection" onClick={() => setMobileBar(false)}>

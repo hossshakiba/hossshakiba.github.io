@@ -12,7 +12,7 @@ const EducationButton = (props) => {
                 props.setShowEducation(!props.showEducation)
             }}>
                 {props.showEducation ? <Image alt="downArrow" src={downArrow} /> : <Image alt="rightArrow" src={rightArrow} />}
-                <span className="text-gray-dark xl:text-lg 2xl:text-xl font-bold ml-2">
+                <span className="text-gray-dark text-[0.95rem] lg:text-[1.04rem] xl:text-[1.08rem] 2xl:text-[1.14rem] font-semibold ml-2">
                     Education
                 </span>
             </button>

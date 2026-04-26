@@ -6,9 +6,10 @@ import { BASE_URL } from '../config';
 
 const Footer = () => {
     const data = getData('socialMedia.json');
+    const lastUpdated = 'May 2026';
 
     return (
-        <div className="bg-[#819EB4] h-24 flex items-center justify-center">
+        <div className="bg-[#819EB4] py-4 px-3 flex flex-col items-center justify-center gap-2">
             <ul className="flex items-center [&>*]:mx-1.5 md:[&>*]:mx-3 justify-center">
                 {data.socialMedias.map(socialMedia =>
                     <li>
@@ -25,6 +26,9 @@ const Footer = () => {
                     </li>
                 )}
             </ul>
+            <p className="text-[0.68rem] sm:text-xs text-[#e8f0f7] tracking-[0.02em]">
+                Last updated: {lastUpdated}
+            </p>
         </div>
     )
 }

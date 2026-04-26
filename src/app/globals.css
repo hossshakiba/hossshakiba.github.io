@@ -19,6 +19,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #ffff;
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
 }
 
 @layer utilities {
@@ -28,6 +31,29 @@ body {
 }
 
 @layer components {
+  .content-shell {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .content-shell {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .content-shell {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
   /* .highlight {
     background: url('https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=ffb6c1');
     margin: -2px -6px;
@@ -61,5 +87,89 @@ body {
     background-size: 100% 25%;
     background-position: 0 100%;
     display: inline-block;
+  }
+
+  .ink-underline {
+    display: inline;
+    background-image: linear-gradient(rgba(122, 159, 195, 0.62), rgba(122, 159, 195, 0.62));
+    background-repeat: no-repeat;
+    background-position: 0 92%;
+    background-size: 100% 2px;
+    padding-bottom: 0.04em;
+  }
+
+  .name-accent {
+    display: inline-block;
+    padding-bottom: 0.12em;
+    border-bottom: 2px solid #9ab6d4;
+    line-height: 1.05;
+  }
+
+  .mobile-social-dock {
+    display: flex;
+    align-items: center;
+    gap: 0.38rem;
+    padding: 0.3rem 0.38rem;
+    border-radius: 0.85rem;
+    background: #f6f9fc;
+    border: 1px solid #dde5ee;
+    box-shadow: 0 4px 12px rgba(46, 74, 104, 0.08);
+  }
+
+  .mobile-social-chip {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    border: 1px solid #d5dee8;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  }
+
+  .mobile-social-chip:hover {
+    transform: translateY(-1px);
+    border-color: #b8c8da;
+    box-shadow: 0 3px 8px rgba(46, 74, 104, 0.12);
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #202020;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .section-kicker {
+    margin: 0 0 0.35rem 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8d959d;
+  }
+
+  .section-heading {
+    margin-bottom: 1rem;
+  }
+
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: #dce1e7;
+    margin-top: 0.55rem;
+  }
+
+  @media (min-width: 1024px) {
+    .section-title {
+      font-size: 1.4rem;
+    }
+
+    .section-kicker {
+      font-size: 0.74rem;
+    }
   }
 }

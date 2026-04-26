@@ -67,17 +67,17 @@ const Modal = (props) => {
                 <div className="relative bg-[#f9fafb] max-h-[12rem] w-full mt-3 py-2 px-2 sm:px-4 rounded-md overflow-y-auto overflow-x-auto text-sm sm:text-base">
                     <div id="bibText" className="leading-relaxed whitespace-pre">
                         <div>
-                            <span className="text-red-600 font-bold">{data1[0]}</span>
-                            <span className="text-purple-700 font-medium">{`{${data1[1]},`}</span>
+                            <span className="text-[#355b84] font-semibold">{data1[0]}</span>
+                            <span className="text-[#5f6f80] font-medium">{`{${data1[1]},`}</span>
                         </div>
                         <div className="pl-3">
                             {formattedBibEntries.map((entry, index) => (
                                 <div key={index}>
-                                    <span className="text-blue-700 font-semibold">{entry}</span>
+                                    <span className="text-[#4a6078] font-medium">{entry}</span>
                                 </div>
                             ))}
                         </div>
-                        <div className="pl-1 text-purple-700">{'}'}</div>
+                        <div className="pl-1 text-[#5f6f80]">{'}'}</div>
                     </div>
 
                     {/* Copy Button */}

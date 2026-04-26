@@ -23,12 +23,13 @@ const Publications = (props) => {
     <div id="publicationSection" className="relative scroll-mt-16">
       {showModal && <Modal title={cartTitle} setShowModal={setShowModal} data={modalData} />}
       {/* <Image alt="" src={publicationRectangle} className="absolute left-0 top-96 -z-10 hidden lg:block" /> */}
-      <div className="container m-auto px-7 lg:px-10 xl:px-20 2xl:px-28 3xl:px-44 pt-8 md:pt-16">
-        <div className="">
-          <p className="text-gray-dark  text-xl xl:text-2xl 2xl:text-3xl mb-3 highlight-thin">Publications</p>
-          <p className="text-[#606060] text-sm ">For a complete list of my research works, please look up my <a className="text-blue-500" href="https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1">Google Scholar</a>.</p>
+      <div className="content-shell pt-8 md:pt-16">
+        <div className="section-heading">
+          <p className="section-title">Publications</p>
+          <div className="section-divider"></div>
+          <p className="text-[#66707a] text-xs sm:text-sm mt-3 tracking-[0.01em]">For a complete list of research works, see my <a className="text-[#5079a4] hover:text-[#355b84] transition-colors duration-150" href="https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1">Google Scholar</a>.</p>
         </div>
-        <div className="flex flex-col items-center justify-center pt-8 xl:pt-16">
+        <div className="flex flex-col items-center justify-center pt-4 xl:pt-8">
           {props.data.publications.slice(0, 4).map((publication, index) =>
             <Cart setCartTitle={setCartTitle} setShowModal={setShowModal} setModalData={setModalData} key={index} author={true} data={publication} />
           )}

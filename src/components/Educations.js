@@ -7,9 +7,9 @@ const Educations = (props) => {
         <div>
             <div id="Educations" className="scroll-mt-48"></div>
             {props.showEducation && (
-                <div className="md:ml-5 lg:ml-10 xl:ml-20 flex">
+                <div className="ml-0 md:ml-2 lg:ml-4 xl:ml-8 flex">
                     {/* Image Section */}
-                    <div className="flex-shrink-0 w-24 h-24 lg:mr-5 relative">
+                    <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 -mt-1 lg:mr-5 relative">
                         <Image
                             alt="Education Image"
                             src={BASE_URL + props.educationData.image}
@@ -33,16 +33,16 @@ const Educations = (props) => {
 
                         {/* Details */}
                         <div className="lg:w-90">
-                            <p className="text-base md:text-lg lg:text-xl">
+                            <p className="text-sm md:text-base lg:text-lg">
                                 {props.educationData.university}
                             </p>
-                            <p className="text-sm md:text-base">
+                            <p className="text-xs md:text-sm">
                                 {props.educationData.degree}
                             </p>
-                            <p className="text-sm md:text-base">
+                            <p className="text-xs md:text-sm">
                                 {props.educationData.date}
                             </p>
-                            <ul className="text-sm md:text-base list-disc ml-8">
+                            <ul className="text-xs md:text-sm list-disc ml-6 md:ml-7">
                                 {props.educationData.details.map((detail, index) => (
                                     <li key={index}>{detail}</li>
                                 ))}
