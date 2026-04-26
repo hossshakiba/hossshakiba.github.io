@@ -8,6 +8,25 @@ import Script from 'next/script';
 const Header = () => {
     const [mobileBar, setMobileBar] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        const rootIsDark = document.documentElement.classList.contains('dark');
+        setTheme(rootIsDark ? 'dark' : 'light');
+
+        // Keep theme in sync with OS preference until user explicitly picks a theme.
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+        const syncFromSystem = (event) => {
+            const saved = localStorage.getItem('theme');
+            if (saved) return;
+            const shouldUseDark = event.matches;
+            document.documentElement.classList.toggle('dark', shouldUseDark);
+            setTheme(shouldUseDark ? 'dark' : 'light');
+        };
+
+        media.addEventListener('change', syncFromSystem);
+        return () => media.removeEventListener('change', syncFromSystem);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -35,10 +54,18 @@ const Header = () => {
         };
     }, []);
 
+    const toggleTheme = () => {
+        const nextTheme = theme === 'dark' ? 'light' : 'dark';
+        const shouldUseDark = nextTheme === 'dark';
+        document.documentElement.classList.toggle('dark', shouldUseDark);
+        localStorage.setItem('theme', nextTheme);
+        setTheme(nextTheme);
+    };
+
     return (
         <div className='relative'>
             <Script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module" />
-            <div className="bg-black fixed w-full z-40 flex justify-between items-center px-6 sm:px-8 lg:px-12 py-3.5">
+            <div className="fixed w-full z-40 flex justify-between items-center px-6 sm:px-8 lg:px-12 py-3.5 bg-[var(--color-nav-bg)] border-b border-[var(--color-border)]">
                 <div className="flex items-center -ml-10 sm:ml-0">
                     <dotlottie-player 
                         src="https://lottie.host/52a91e22-eb41-402a-8aa8-b468973c57cb/WHWL3xqQJH.lottie" 
@@ -56,60 +83,82 @@ const Header = () => {
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex space-x-7 text-[0.92rem]">
                     <Link href="#aboutSection">
-                        <li className={activeSection === 'aboutSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>About</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'aboutSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
+                        <li className={activeSection === 'aboutSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>About</li>
+                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'aboutSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
                     </Link>
                     <Link href="#newsSection">
-                        <li className={activeSection === 'newsSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>News</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'newsSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
+                        <li className={activeSection === 'newsSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>News</li>
+                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'newsSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
                     </Link>
                     <Link href="#publicationSection">
-                        <li className={activeSection === 'publicationSection' ? 'text-[#B1C7DE] ' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Publications</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'publicationSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
+                        <li className={activeSection === 'publicationSection' ? 'text-[var(--color-nav-active)] ' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>Publications</li>
+                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'publicationSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
                     </Link>
                     <Link href="#experienceSection">
-                        <li className={activeSection === 'experienceSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Experience</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'experienceSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
+                        <li className={activeSection === 'experienceSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>Experience</li>
+                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'experienceSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
                     </Link>
-                    {/* <Link href="#HonorsSection">
-                        <li className={activeSection === 'HonorsSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Achievements</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'HonorsSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
-                    </Link> */}
+                    <Link href="#HonorsSection">
+                        <li className={activeSection === 'HonorsSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>Achivements</li>
+                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'HonorsSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
+                    </Link>
                     <Link href="#TalksSection">
-                        <li className={activeSection === 'TalksSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Presentations</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'TalksSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
+                        <li className={activeSection === 'TalksSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>Presentations</li>
+                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'TalksSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
                     </Link>
                     {/* <Link href="#AcademicServiceSection">
                         <li className={activeSection === 'AcademicServiceSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Academic Service</li>
                         <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'AcademicServiceSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
                     </Link> */}
                 </ul>
+                <button
+                    type="button"
+                    aria-label="Toggle dark mode"
+                    aria-pressed={theme === 'dark'}
+                    title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                    onClick={toggleTheme}
+                    className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-[var(--toggle-border)] bg-[var(--toggle-bg)] text-[var(--color-heading)] text-xs font-semibold hover:scale-105 transition-transform duration-150"
+                >
+                    <span className="text-sm">{theme === 'dark' ? '🌙' : '☀️'}</span>
+                    <span>{theme === 'dark' ? 'Night' : 'Day'}</span>
+                </button>
                 <button className="md:hidden" onClick={() => setMobileBar(!mobileBar)}>
                     <Image alt="menu" src={menu} />
                 </button>
             </div>
             {/* {mobileBar && ( */}
-            <div className={`md:hidden fixed top-16 left-0 w-full bg-black text-white font-semibold text-sm flex flex-col items-start px-6 sm:px-8 pt-4 pb-6 space-y-4
+            <div className={`md:hidden fixed top-16 left-0 w-full bg-[var(--color-nav-bg)] text-[var(--color-nav-text)] font-semibold text-sm flex flex-col items-start px-6 sm:px-8 pt-4 pb-6 space-y-4 border-b border-[var(--color-border)]
                 ${mobileBar ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'}
                 transform transition-all duration-500 ease-in-out z-20`}>
                 <Link href="#aboutSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'aboutSection' ? 'text-[#B1C7DE]' : 'text-white'}>About</span>
+                    <span className={activeSection === 'aboutSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>About</span>
                 </Link>
                 <Link href="#newsSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'newsSection' ? 'text-[#B1C7DE]' : 'text-white'}>News</span>
+                    <span className={activeSection === 'newsSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>News</span>
                 </Link>
                 <Link href="#publicationSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'publicationSection' ? 'text-[#B1C7DE]' : 'text-white'}>Publications</span>
+                    <span className={activeSection === 'publicationSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>Publications</span>
                 </Link>
                 <Link href="#experienceSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'experienceSection' ? 'text-[#B1C7DE]' : 'text-white'}>Experience</span>
+                    <span className={activeSection === 'experienceSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>Experience</span>
                 </Link>
-                {/* <Link href="#HonorsSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'HonorsSection' ? 'text-[#B1C7DE]' : 'text-white'}>Awards</span>
-                </Link> */}
+                <Link href="#HonorsSection" onClick={() => setMobileBar(false)}>
+                    <span className={activeSection === 'HonorsSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>Achivements</span>
+                </Link>
                 <Link href="#TalksSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'TalksSection' ? 'text-[#B1C7DE]' : 'text-white'}>Presentations</span>
+                    <span className={activeSection === 'TalksSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>Presentations</span>
                 </Link>
+                <button
+                    type="button"
+                    aria-label="Toggle dark mode"
+                    aria-pressed={theme === 'dark'}
+                    title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                    onClick={toggleTheme}
+                    className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-[var(--toggle-border)] bg-[var(--toggle-bg)] text-[var(--color-heading)] text-xs"
+                >
+                    <span className="text-sm">{theme === 'dark' ? '🌙' : '☀️'}</span>
+                    <span>{theme === 'dark' ? 'Night mode' : 'Day mode'}</span>
+                </button>
                 {/* <Link href="#AcademicServiceSection" onClick={() => setMobileBar(false)}>
                     <span className={activeSection === 'AcademicServiceSection' ? 'text-[#B1C7DE]' : 'text-white'}>Academic Service</span>
                 </Link> */}

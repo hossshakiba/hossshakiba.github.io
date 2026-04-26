@@ -1,0 +1,34 @@
+<svg width="320" height="220" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <path d="M28 184H292" />
+    <path d="M48 184V136H80V184" />
+    <path d="M80 184V122H112V184" />
+    <path d="M112 184V146H142V184" />
+    <path d="M142 184V112H178V184" />
+    <path d="M178 184V140H206V184" />
+    <path d="M206 184V124H238V184" />
+    <path d="M238 184V152H270V184" />
+
+    <path d="M60 136V104L72 90L84 104V136" />
+    <path d="M92 122V92L102 78L112 92V122" />
+    <path d="M156 112V72L170 52L184 72V112" />
+    <path d="M220 124V90L232 74L244 90V124" />
+    <path d="M254 152V124L264 110L274 124V152" />
+
+    <path d="M170 52V36" />
+    <path d="M170 36L180 42" />
+    <path d="M170 36L160 42" />
+
+    <path d="M156 184V160C156 151 163 144 172 144C181 144 188 151 188 160V184" />
+    <path d="M95 184V163C95 156 100 151 107 151C114 151 119 156 119 163V184" />
+    <path d="M216 184V165C216 158 222 153 229 153C236 153 242 158 242 165V184" />
+
+    <path d="M53 154H75" />
+    <path d="M86 146H108" />
+    <path d="M146 134H174" />
+    <path d="M208 148H232" />
+
+    <path d="M22 198C46 190 74 194 96 203" />
+    <path d="M224 203C248 194 276 191 300 198" />
+  </g>
+</svg>

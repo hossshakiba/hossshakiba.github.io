@@ -9,7 +9,7 @@ const Footer = () => {
     const lastUpdated = 'May 2026';
 
     return (
-        <div className="bg-[#819EB4] py-4 px-3 flex flex-col items-center justify-center gap-2">
+        <div className="py-4 px-3 flex flex-col items-center justify-center gap-2 bg-[var(--color-footer-bg)] border-t border-[var(--color-border)]">
             <ul className="flex items-center [&>*]:mx-1.5 md:[&>*]:mx-3 justify-center">
                 {data.socialMedias.map(socialMedia =>
                     <li>
@@ -26,7 +26,7 @@ const Footer = () => {
                     </li>
                 )}
             </ul>
-            <p className="text-[0.68rem] sm:text-xs text-[#e8f0f7] tracking-[0.02em]">
+            <p className="text-[0.68rem] sm:text-xs text-[var(--color-footer-text)] tracking-[0.02em]">
                 Last updated: {lastUpdated}
             </p>
         </div>

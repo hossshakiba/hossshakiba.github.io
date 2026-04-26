@@ -49,35 +49,35 @@ const Modal = (props) => {
             {/* Background Overlay */}
             <div
                 onClick={() => props.setShowModal(false)}
-                className="bg-black opacity-30 fixed left-0 top-0 z-20 h-screen w-screen"
+                className="bg-black opacity-50 fixed left-0 top-0 z-20 h-screen w-screen"
             ></div>
 
             {/* Modal Content */}
-            <div className="p-4 md:p-5 fixed -translate-x-1/2 -translate-y-1/2 top-[50%] left-[50%] w-[80%] sm:w-[70%] md:w-[50%] lg:w-[40%] max-h-[20rem] bg-white z-30 rounded-lg shadow-lg text-black">
+            <div className="p-4 md:p-5 fixed -translate-x-1/2 -translate-y-1/2 top-[50%] left-[50%] w-[80%] sm:w-[70%] md:w-[50%] lg:w-[40%] max-h-[20rem] theme-surface border z-30 rounded-lg shadow-lg theme-heading">
                 {/* Header */}
-                <div className="flex justify-between items-center border-b pb-2">
+                <div className="flex justify-between items-center border-b border-[var(--color-border)] pb-2">
                     <div className="text-sm sm:text-base md:text-lg">{props.title}</div>
                     <FaXmark
-                        className="w-5 h-5 cursor-pointer text-gray-500 hover:text-gray-700"
+                        className="w-5 h-5 cursor-pointer theme-subtle hover:text-[var(--color-heading)]"
                         onClick={() => props.setShowModal(false)}
                     />
                 </div>
 
                 {/* BibTex Content */}
-                <div className="relative bg-[#f9fafb] max-h-[12rem] w-full mt-3 py-2 px-2 sm:px-4 rounded-md overflow-y-auto overflow-x-auto text-sm sm:text-base">
+                <div className="relative theme-surface-soft max-h-[12rem] w-full mt-3 py-2 px-2 sm:px-4 rounded-md border border-[var(--color-border)] overflow-y-auto overflow-x-auto text-sm sm:text-base">
                     <div id="bibText" className="leading-relaxed whitespace-pre">
                         <div>
-                            <span className="text-[#355b84] font-semibold">{data1[0]}</span>
-                            <span className="text-[#5f6f80] font-medium">{`{${data1[1]},`}</span>
+                            <span className="text-[var(--color-accent-strong)] font-semibold">{data1[0]}</span>
+                            <span className="theme-muted font-medium">{`{${data1[1]},`}</span>
                         </div>
                         <div className="pl-3">
                             {formattedBibEntries.map((entry, index) => (
                                 <div key={index}>
-                                    <span className="text-[#4a6078] font-medium">{entry}</span>
+                                    <span className="text-[var(--color-accent)] font-medium">{entry}</span>
                                 </div>
                             ))}
                         </div>
-                        <div className="pl-1 text-[#5f6f80]">{'}'}</div>
+                        <div className="pl-1 theme-muted">{'}'}</div>
                     </div>
 
                     {/* Copy Button */}
@@ -85,12 +85,12 @@ const Modal = (props) => {
                         <div
                             className={`transition-opacity duration-300 ${
                                 isCopied ? 'opacity-100' : 'opacity-0'
-                            } bg-blue-300 text-white px-2 py-1 rounded-md text-xs font-medium shadow-md`}
+                            } bg-[var(--color-accent)] text-white px-2 py-1 rounded-md text-xs font-medium shadow-md`}
                         >
                             {isCopied ? 'Copied!' : ''}
                         </div>
                         <LuCopy
-                            className="w-5 h-5 text-gray-600 cursor-pointer hover:text-gray-800 transition-all duration-300 transform hover:scale-110"
+                            className="w-5 h-5 theme-muted cursor-pointer hover:text-[var(--color-heading)] transition-all duration-300 transform hover:scale-110"
                             onClick={copyTextHandler}
                         />
                     </div>

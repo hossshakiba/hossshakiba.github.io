@@ -1,0 +1,16 @@
+<svg width="210" height="230" viewBox="0 0 210 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <path d="M62 40H148L136 194C135 203 128 210 119 210H91C82 210 75 203 74 194L62 40Z" />
+    <path d="M62 40C76 52 90 56 105 56C120 56 134 52 148 40" />
+    <path d="M72 88C84 96 95 99 105 99C115 99 126 96 138 88" />
+    <path d="M76 124C86 131 95 134 105 134C115 134 124 131 134 124" />
+    <path d="M80 160C88 166 96 169 105 169C114 169 122 166 130 160" />
+
+    <path d="M122 12C132 20 141 29 149 38C156 46 161 54 165 62" />
+    <path d="M114 20C124 28 133 37 141 46C148 54 153 62 157 70" />
+    <path d="M121 12H138" />
+    <path d="M165 62L172 54" />
+    <path d="M157 70L165 62" />
+    <path d="M76 28C80 22 90 22 94 28C98 34 94 42 88 42C82 42 76 34 76 28Z" />
+  </g>
+</svg>

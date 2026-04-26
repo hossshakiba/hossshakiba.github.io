@@ -5,10 +5,13 @@
             "laboratory": "Multimodal AI Lab",
             "url": "https://www.informatik.tu-darmstadt.de/mai/multimodal_ai/index.en.jsp",
             "logo": "/images/experience/tuda.png",
+            "invertInDarkMode": true,
             "type": "Work Study",
             "date": "Apr 2025 - Present",
             "information": [
                 "Under the supervision of Prof. Anna Rohrbach.",
+                "Proposed Obliviate, a novel concept erasure method for autoregressive image generation models.",
+                "Worked on the first multimodal backdoor attacks targeting unified autoregressive models.",
                 "Worked on learning and personalizing relational concepts in text-to-image diffusion models."
             ]
         },
@@ -22,20 +25,19 @@
             "information": [
                 "Under the supervision of Prof. Hassan Khotanlou.",
                 "Collaborated on a project focused on cloud removal from satellite imagery.",
-                "Proposed an autoencoder-based model for low-light light image enhancement.",
-                "Published a journal paper."
+                "Proposed an autoencoder-based model for low-light light image enhancement. Published a journal paper."
             ]
         },
         {
             "position": "Undergraduate Student Researcher",
             "laboratory": "Intelligent Systems & Machine Learning Lab",
             "logo": "/images/buali.png",
+            "invertInDarkMode": true,
             "type": "Work Study",
             "date": "October 2022 - April 2023",
             "information": [
                 "Under the supervision of Prof. Muharram Mansoorizadeh.",
-                "Proposed a framework and a dataset for detecting and grading diabetic retinopathy.",
-                "Published a journal paper."
+                "Proposed a deep learning framework for detecting and grading diabetic retinopathy. Published a journal paper."
             ]
         },
         {

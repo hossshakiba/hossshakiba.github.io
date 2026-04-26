@@ -1,19 +1,12 @@
 'use client'
 import { useState } from 'react';
-import Image from 'next/image';
 import Cart from './Cart';
-import talksRectangle1 from '../../public/images/design/talksRectangle1.svg';
-import talksRectangle2 from '../../public/images/design/talksRectangle2.svg';
-import talksRectangle3 from '../../public/images/design/talksRectangle3.svg';
 
 const TalksPresentations = (props) => {
   const [showAllTalksPresentations, setShowAllTalksPresentations] = useState(false);
 
   return (
     <div id="TalksSection" className="relative scroll-mt-16">
-      <Image src={talksRectangle1} alt="" className="absolute left-0 top-[20%] -z-10 hidden lg:block" />
-      <Image src={talksRectangle2} alt="" className="absolute right-0 top-[50%] -z-10 hidden lg:block" />
-      <Image src={talksRectangle3} alt="" className="absolute right-8 top-[70%] -z-10 hidden lg:block" />
       <div className="content-shell pt-8 md:pt-16">
         <div className="section-heading">
           <p className="section-title">Talks & Presentations</p>
@@ -31,7 +24,7 @@ const TalksPresentations = (props) => {
         </div>
           {
             props.data.TalksPresentations.length > 3 &&
-            <button className="text-[#748595] text-xs md:text-sm xl:text-base bg-primary1 mt-6 py-2 px-4 rounded-lg mx-auto flex mb-10"
+            <button className="theme-muted text-xs md:text-sm xl:text-base theme-surface-soft border mt-6 py-2 px-4 rounded-lg mx-auto flex mb-10 hover:text-[var(--color-accent)] transition-colors duration-150"
             onClick={() => setShowAllTalksPresentations(!showAllTalksPresentations)}
           >
             {showAllTalksPresentations ? 'show less' : `show more`}

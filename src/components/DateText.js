@@ -26,13 +26,13 @@ const DateText = (props) => {
                 const showConnector = !isLastVisible && !isPreviewItem;
 
                 return (
-                    <div key={`${n.date}-${index}`} className={`${isPreviewItem ? 'text-gray' : 'text-gray-dark'} flex items-stretch gap-2 sm:gap-4`}>
+                    <div key={`${n.date}-${index}`} className={`${isPreviewItem ? 'theme-muted' : 'theme-heading'} flex items-stretch gap-2 sm:gap-4`}>
                         <p className="text-[10px] sm:text-xs md:text-sm lg:text-base w-[4.25rem] sm:w-28 md:w-32 lg:w-36 pt-0.5 sm:pt-1.5 text-right shrink-0">
                             {n.date}
                         </p>
                         <div className="w-4 sm:w-6 md:w-8 flex flex-col items-center pt-1 self-stretch shrink-0">
-                            <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-[#BCC0C2] rounded-full"></div>
-                            {showConnector && <div className="w-0.5 sm:w-1 flex-1 rounded-lg mt-1 bg-[#D7E1EB]"></div>}
+                            <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-[var(--color-subtle)] rounded-full"></div>
+                            {showConnector && <div className="w-0.5 sm:w-1 flex-1 rounded-lg mt-1 bg-[var(--color-border)]"></div>}
                         </div>
                         <p className="text-sm md:text-[0.96rem] 2xl:text-base 3xl:text-lg flex-1 min-w-0 pb-6">
                             {makeText(n.text)}

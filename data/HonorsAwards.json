@@ -1,8 +1,8 @@
 {
     "awards": [
         {
-            "date" : "October 2024",
-            "text" : ["5th Place in the Computer Vision Track, Tech Olympics 2024, among 455 teams, Tehran, Iran"]
+            "date" : "November 2025",
+            "text" : ["1st Place in the Rayan International AI Contest, Tehran, Iran"]
         },
         {
             "date" : "March 2024",
@@ -11,10 +11,6 @@
         {
             "date" : "January 2024",
             "text" : ["Outstanding Undergraduate Student for Academic Excellence, Bu-Ali Sina University"]
-        },
-        {
-            "date" : "May 2023",
-            "text" : ["2nd Place in the Data-Driven Decision-Making Competition, Bu-Ali Sina University"]
         }
     ]
 }

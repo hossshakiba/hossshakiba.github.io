@@ -1,0 +1,11 @@
+<svg width="200" height="300" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.95" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 280V235" />
+    <path d="M88 280H112" />
+    <path d="M100 64L135 108H65L100 64Z" />
+    <path d="M100 90L142 138H58L100 90Z" />
+    <path d="M100 117L148 170H52L100 117Z" />
+    <path d="M100 146L155 203H45L100 146Z" />
+    <path d="M100 176L162 235H38L100 176Z" />
+  </g>
+</svg>

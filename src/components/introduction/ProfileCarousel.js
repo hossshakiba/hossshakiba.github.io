@@ -30,7 +30,7 @@ const ProfileCarousel = ({ images, alt, imageClassName, showControlsOnHover = tr
             type="button"
             aria-label="Previous profile image"
             onClick={showPrev}
-            className={`absolute left-3 bottom-3 h-8 w-8 rounded-md bg-[rgba(247,251,255,0.35)] text-[#2f3f4f] border border-[rgba(214,224,234,0.75)] shadow-sm transition-all duration-200 hover:bg-[rgba(247,251,255,0.6)] hover:border-[rgba(188,203,218,0.85)] ${
+            className={`absolute left-3 bottom-3 h-8 w-8 rounded-md bg-[var(--color-surface)] text-[var(--color-heading)] border border-[var(--color-border)] shadow-sm transition-all duration-200 hover:bg-[var(--color-surface-soft)] hover:border-[var(--color-accent)] ${
               showControlsOnHover ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
             } ${controlsClassName}`}
           >
@@ -40,7 +40,7 @@ const ProfileCarousel = ({ images, alt, imageClassName, showControlsOnHover = tr
             type="button"
             aria-label="Next profile image"
             onClick={showNext}
-            className={`absolute right-3 bottom-3 h-8 w-8 rounded-md bg-[rgba(247,251,255,0.35)] text-[#2f3f4f] border border-[rgba(214,224,234,0.75)] shadow-sm transition-all duration-200 hover:bg-[rgba(247,251,255,0.6)] hover:border-[rgba(188,203,218,0.85)] ${
+            className={`absolute right-3 bottom-3 h-8 w-8 rounded-md bg-[var(--color-surface)] text-[var(--color-heading)] border border-[var(--color-border)] shadow-sm transition-all duration-200 hover:bg-[var(--color-surface-soft)] hover:border-[var(--color-accent)] ${
               showControlsOnHover ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
             } ${controlsClassName}`}
           >

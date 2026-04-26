@@ -1,0 +1,19 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <path d="M62 180L74 86H146L158 180H62Z" />
+    <path d="M74 86C86 98 98 103 110 103C122 103 134 98 146 86" />
+    <path d="M70 154C96 142 124 142 150 154" />
+
+    <path d="M84 94V58" />
+    <path d="M94 94V50" />
+    <path d="M104 96V56" />
+    <path d="M114 96V48" />
+    <path d="M124 96V54" />
+    <path d="M134 94V60" />
+
+    <path d="M80 70L84 58" />
+    <path d="M100 62L104 50" />
+    <path d="M120 60L124 48" />
+    <path d="M140 72L144 60" />
+  </g>
+</svg>

@@ -5,29 +5,27 @@ import { BASE_URL } from '../config';
 const Educations = (props) => {
     return (
         <div>
-            <div id="Educations" className="scroll-mt-48"></div>
-            {props.showEducation && (
-                <div className="ml-0 md:ml-2 lg:ml-4 xl:ml-8 flex">
+            <div className="ml-0 md:ml-2 lg:ml-4 xl:ml-8 flex">
                     {/* Image Section */}
                     <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 -mt-1 lg:mr-5 relative">
                         <Image
                             alt="Education Image"
                             src={BASE_URL + props.educationData.image}
                             fill
-                            className="object-contain rounded-lg"
+                            className="university-logo object-contain rounded-lg"
                             sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 144px, 144px"
                         />
                     </div>
 
                     {/* Content Section */}
-                    <div className="text-gray-dark flex">
+                    <div className="theme-heading flex">
                         {/* Timeline */}
                         <div className="relative">
                             {/* Circle */}
-                            <div className="w-2 h-2 mx-3 lg:mx-7 bg-[#BCC0C2] rounded-full my-3"></div>
+                            <div className="w-2 h-2 mx-3 lg:mx-7 bg-[var(--color-subtle)] rounded-full my-3"></div>
                             {/* Line */}
                             {props.index + 1 !== props.length && (
-                                <div className="w-1 h-28 ml-[0.88rem] lg:ml-[1.9rem] mr-[0.88rem] lg:mr-[1.85rem] rounded-lg bg-[#D7E1EB]"></div>
+                                <div className="w-1 h-28 ml-[0.88rem] lg:ml-[1.9rem] mr-[0.88rem] lg:mr-[1.85rem] rounded-lg bg-[var(--color-border)]"></div>
                             )}
                         </div>
 
@@ -50,7 +48,6 @@ const Educations = (props) => {
                         </div>
                     </div>
                 </div>
-            )}
         </div>
     );
 };

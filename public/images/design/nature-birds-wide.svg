@@ -1,0 +1,12 @@
+<svg width="240" height="130" viewBox="0 0 240 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.95" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 82C27 73 36 73 43 82" />
+    <path d="M43 82C50 73 59 73 66 82" />
+    <path d="M74 60C80 53 87 53 93 60" />
+    <path d="M93 60C99 53 106 53 112 60" />
+    <path d="M128 74C134 67 141 67 147 74" />
+    <path d="M147 74C153 67 160 67 166 74" />
+    <path d="M172 52C178 45 185 45 191 52" />
+    <path d="M191 52C197 45 204 45 210 52" />
+  </g>
+</svg>
