@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* iOS Safari: WebKit may still wrap dates / address-like text in <a x-apple-data-detectors> */
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
 :root {
   --color-bg: #ffffff;
   --color-text: #1f2933;

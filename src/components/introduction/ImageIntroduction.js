@@ -1,6 +1,6 @@
-import introductionRectangle2 from '../../../public/images/design/Rectangle 27 (8).svg';
-import introductionRectangle3 from '../../../public/images/design/introductionRectangle2.svg';
-import googleScholar from '../../../public/images/socialMedia/googleScholar.svg';
+import introductionRectangle2 from '../../../public/images/illustrations/rectangle-27-8.svg';
+import introductionRectangle3 from '../../../public/images/illustrations/introduction-rectangle-2.svg';
+import googleScholar from '../../../public/images/social/googleScholar.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getData } from '../../../lib/getData';
@@ -21,7 +21,7 @@ const focusRingStyles = `
 `;
 
 const ImageIntroduction = () => {
-    const data = getData('socialMedia.json');
+    const data = getData('social.json');
     const profileImages = [
         '/images/profiles/prof-1.JPG',
         '/images/profiles/prof-2.JPG',

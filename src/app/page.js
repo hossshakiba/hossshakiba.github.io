@@ -12,10 +12,10 @@ import AcademicService from "@/components/AcademicService";
 export default function Home() {
 
   const news = getData('news.json');
-  const awards = getData('HonorsAwards.json');
+  const awards = getData('honors-awards.json');
   const publications = getData('publications.json');
-  const talksPresentations = getData('TalksPresentations.json');
-  const experience = getData('Experience.json');
+  const talksPresentations = getData('talks-presentations.json');
+  const experience = getData('experience.json');
 
   return (
     <div className="">

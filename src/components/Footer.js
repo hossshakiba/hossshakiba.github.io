@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { BASE_URL } from '../config';
 
 const Footer = () => {
-    const data = getData('socialMedia.json');
+    const data = getData('social.json');
     const lastUpdated = 'May 2026';
 
     return (

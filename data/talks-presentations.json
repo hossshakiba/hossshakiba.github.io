@@ -1,10 +1,10 @@
-{ 
-  "TalksPresentations": [
+{
+  "talks": [
     {
       "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
       "year": "Summer 2025",
-      "journal": "TU Darmstadt",
-      "image": "/images/TalksPresentations/ldm.png",
+      "venue": "TU Darmstadt",
+      "image": "/images/talks/ldm.png",
       "slides": "https://drive.google.com/file/d/1xRt-7l-Cc8b3Y1Oojp4nn4namfxdDeTt/view",
       "url": ""
     }

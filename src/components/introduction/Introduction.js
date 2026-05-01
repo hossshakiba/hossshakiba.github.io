@@ -1,11 +1,11 @@
-import image from '../../../public/images/bgImage.jpg';
+import image from '../../../public/images/site/bgImage.jpg';
 import Image from 'next/image';
 import DetaiIntroduction from './DetaiIntroduction';
 import ImageIntroduction from './ImageIntroduction';
 import { getData } from '../../../lib/getData';
 import MobileIntroduction from './MobileImageIntroduction';
-import natureLeafCluster from '../../../public/images/design/nature-leaf-cluster.svg';
-import natureConstellation from '../../../public/images/design/nature-constellation.svg';
+import natureLeafCluster from '../../../public/images/illustrations/nature-leaf-cluster.svg';
+import natureConstellation from '../../../public/images/illustrations/nature-constellation.svg';
 import { showDecorSketches } from '@/config/decorSketches';
 
 const Introduction = async () => {

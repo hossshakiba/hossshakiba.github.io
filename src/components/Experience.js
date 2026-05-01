@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import ExperienceCart from './ExperienceCart';
 import Image from 'next/image';
-import natureTree from '../../public/images/design/nature-tree-outline.svg';
-import natureWindLines from '../../public/images/design/nature-wind-lines.svg';
-import natureStroke from '../../public/images/design/nature-stroke.svg';
-import natureTreeRoundedBig from '../../public/images/design/nature-tree-rounded-big.svg';
-import natureBirdsSmall from '../../public/images/design/nature-birds-small.svg';
-import natureBirdsWide from '../../public/images/design/nature-birds-wide.svg';
+import natureTree from '../../public/images/illustrations/nature-tree-outline.svg';
+import natureWindLines from '../../public/images/illustrations/nature-wind-lines.svg';
+import natureStroke from '../../public/images/illustrations/nature-stroke.svg';
+import natureTreeRoundedBig from '../../public/images/illustrations/nature-tree-rounded-big.svg';
+import natureBirdsSmall from '../../public/images/illustrations/nature-birds-small.svg';
+import natureBirdsWide from '../../public/images/illustrations/nature-birds-wide.svg';
 import { showDecorSketches } from '@/config/decorSketches';
 
 const Experience = ({ data }) => {

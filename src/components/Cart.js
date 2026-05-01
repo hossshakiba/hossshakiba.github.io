@@ -41,7 +41,7 @@ const Cart = (props) => {
         <div>
           <div className="flex flex-col sm:flex-col-reverse mt-1.5">
             <p className="text-[0.65rem] sm:text-[0.7rem] uppercase tracking-[0.08em] text-[var(--color-accent)] mt-2 sm:mt-1 inline py-1 font-semibold">
-              {props.data.journal} · {props.data.year}
+              {props.data.venue} · {props.data.year}
             </p>
             {props.data.url ? (
               <Link href={props.data.url}>
@@ -69,16 +69,6 @@ const Cart = (props) => {
           </div>}
         </div>
         <div className="[&>*]:mt-2 md:[&>*]:mt-3 flex flex-wrap [&>*]:mr-2 mb-0 sm:mb-2">
-          {props.data.bibtex &&
-            <button onClick={() => {
-              props.setShowModal(true);
-              props.setModalData(props.data.bibtex.data);
-              props.setCartTitle(props.data.title);
-            }} className={`${actionButtonClassName} hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]`}>
-              <FaQuoteRight />
-              <span className="text-xs ml-1">BibTeX</span>
-            </button>
-          }
           {props.data.website &&
             <Link href={props.data.url}>
               <button className={`${actionButtonClassName} hover:border-[#EB8317] hover:text-[#EB8317]`}>
@@ -127,6 +117,20 @@ const Cart = (props) => {
               </button>
             </Link>
           }
+          {props.data.bibtex && (
+            <button
+              type="button"
+              onClick={() => {
+                props.setShowModal(true);
+                props.setModalData(props.data.bibtex.data);
+                props.setCartTitle(props.data.title);
+              }}
+              className={`${actionButtonClassName} hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]`}
+            >
+              <FaQuoteRight className="h-3 w-3 shrink-0 sm:h-3.5 sm:w-3.5" aria-hidden />
+              <span className="text-xs ml-1">BibTeX</span>
+            </button>
+          )}
         </div>
       </div>
     </div>

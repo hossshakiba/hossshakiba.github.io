@@ -35,6 +35,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta
+          name="format-detection"
+          content="telephone=no,date=no,address=no,email=no"
+        />
         <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       </head>
       <body className={lato.className}>

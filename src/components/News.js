@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import newsRectangle from '../../public/images/design/newsRectangle.svg';
+import newsRectangle from '../../public/images/illustrations/news-rectangle.svg';
 import { useState } from 'react';
 import DateText from './DateText';
 

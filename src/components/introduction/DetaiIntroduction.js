@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import EducationButton from '../EducationButton';
 import Educations from '../Educations';
-import introductionRectangle1 from '../../../public/images/design/introductionRectangle1.svg';
+import introductionRectangle1 from '../../../public/images/illustrations/introduction-rectangle-1.svg';
 import { useState } from 'react';
 
 const DetaiIntroduction = (props) => {

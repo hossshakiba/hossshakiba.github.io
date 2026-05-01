@@ -12,7 +12,7 @@
                 "Under the supervision of Prof. Anna Rohrbach.",
                 "Proposed Obliviate, a novel concept erasure method for autoregressive image generation models.",
                 "Worked on the first multimodal backdoor attacks targeting unified autoregressive models.",
-                "Worked on learning and personalizing relational concepts in text-to-image diffusion models."
+                "Researched learning and personalizing relational concepts in text-to-image diffusion models."
             ]
         },
         {
@@ -31,7 +31,7 @@
         {
             "position": "Undergraduate Student Researcher",
             "laboratory": "Intelligent Systems & Machine Learning Lab",
-            "logo": "/images/buali.png",
+            "logo": "/images/institutions/buali.png",
             "invertInDarkMode": true,
             "type": "Work Study",
             "date": "October 2022 - April 2023",

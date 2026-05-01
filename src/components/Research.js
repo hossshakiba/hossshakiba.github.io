@@ -2,7 +2,7 @@ import React from 'react'
 import { getData } from '../../lib/getData';
 
 const Research = () => {
-    const research = getData('Research.json');
+    const research = getData('research.json');
     
     return (
         <div id="researchSection" className="pb-10 scroll-mt-32">

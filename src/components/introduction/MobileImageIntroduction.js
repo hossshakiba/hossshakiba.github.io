@@ -5,7 +5,7 @@ import { BASE_URL } from '../../config';
 import ProfileCarousel from './ProfileCarousel';
 
 const MobileIntroduction = () => {
-  const data = getData('mobileSocialMedia.json');
+  const data = getData('mobile-social.json');
   const profileImages = [
     '/images/profiles/prof-1.JPG',
     '/images/profiles/prof-2.JPG',
