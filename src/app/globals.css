@@ -267,6 +267,11 @@ body {
     filter: brightness(0) invert(1);
   }
 
+  /* Mobile intro social SVGs use #798D9C; in dark mode match prior white glyph look */
+  .dark .mobile-intro-social-icon {
+    filter: brightness(0) invert(1);
+  }
+
   .decor-shape {
     transition: opacity 220ms ease, filter 220ms ease;
   }

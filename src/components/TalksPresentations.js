@@ -13,7 +13,7 @@ const TalksPresentations = (props) => {
           <p className="section-title">Talks & Presentations</p>
           <div className="section-divider"></div>
         </div>
-        <div className="flex flex-col items-center justify-center pt-8 xl:pt-16">
+        <div className="flex flex-col items-center justify-center pt-4 xl:pt-8">
           {talks.slice(0, 3).map((talksPresentations, index) =>
             <Cart key={index} author={false} data={talksPresentations} />
           )}

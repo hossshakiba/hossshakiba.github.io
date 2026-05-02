@@ -5,7 +5,7 @@ import { BASE_URL } from '../../config';
 import ProfileCarousel from './ProfileCarousel';
 
 const MobileIntroduction = () => {
-  const data = getData('mobile-social.json');
+  const data = getData('mobile-social.json') ?? { socialMedias: [] };
   const profileImages = [
     '/images/profiles/prof-1.JPG',
     '/images/profiles/prof-2.JPG',
@@ -45,15 +45,15 @@ const MobileIntroduction = () => {
           {data.socialMedias.map((socialMedia) => (
             <li key={socialMedia.alt}>
               <Link href={socialMedia.link}>
-                <span className="theme-surface-soft flex h-9 min-w-9 px-2 items-center justify-center rounded-md border shadow-[0_1px_3px_rgba(46,74,104,0.08)] transition-colors duration-150 hover:bg-[var(--color-surface)] hover:border-[var(--color-accent)] sm:h-10 sm:min-w-10 sm:px-2.5">
-                <Image
-                  alt={socialMedia.alt}
-                  src={BASE_URL + socialMedia.image}
-                  width={20}
-                  height={20}
-                  className="max-w-[20px] max-h-[20px]"
-                  style={{ objectFit: 'contain' }}
-                />
+                <span className="theme-surface-soft flex h-9 min-w-9 items-center justify-center rounded-md border px-2 shadow-[0_1px_3px_rgba(46,74,104,0.08)] transition-colors duration-150 hover:border-[var(--color-accent)] hover:bg-[var(--color-surface)] sm:h-10 sm:min-w-10 sm:px-2.5">
+                  <Image
+                    alt={socialMedia.alt}
+                    src={BASE_URL + socialMedia.image}
+                    width={20}
+                    height={20}
+                    className="mobile-intro-social-icon max-h-[20px] max-w-[20px]"
+                    style={{ objectFit: 'contain' }}
+                  />
                 </span>
               </Link>
             </li>

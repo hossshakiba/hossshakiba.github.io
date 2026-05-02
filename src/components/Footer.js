@@ -19,7 +19,7 @@ const Footer = () => {
                                 src={BASE_URL + socialMedia.image}
                                 width={30}
                                 height={30}
-                                className="max-w-[50px] max-h-[50px] md:max-w-[60px] md:max-h-[60px] lg:max-w-[70px] lg:max-h-[70px]"
+                                className="max-h-[50px] max-w-[50px] md:max-h-[60px] md:max-w-[60px] lg:max-h-[70px] lg:max-w-[70px]"
                                 style={{ objectFit: 'contain' }}
                             />
                         </Link>
