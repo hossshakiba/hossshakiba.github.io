@@ -1,7 +1,7 @@
 const NOTO_EMOJI_BASE = 'https://fonts.gstatic.com/s/e/notoemoji/latest';
 const EMOJI_SIZE = 24;
 
-const NotCodingHobbies = ({ data, className = '' }) => {
+const Hobbies = ({ data, className = '' }) => {
   if (!data?.hobbies?.length) return null;
 
   return (
@@ -42,4 +42,4 @@ const NotCodingHobbies = ({ data, className = '' }) => {
   );
 };
 
-export default NotCodingHobbies;
+export default Hobbies;
