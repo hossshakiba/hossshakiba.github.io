@@ -6,7 +6,10 @@ import { FaYoutube } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { SiGoogleslides, SiHuggingface, SiArxiv } from "react-icons/si";
 import Link from 'next/link';
-import { BASE_URL } from '../config';
+import { BASE_URL, SELF_AUTHOR_NAME } from '../config';
+
+const isSelfAuthor = (author) =>
+  author.self || author.name === SELF_AUTHOR_NAME;
 
 const Cart = (props) => {
   const actionButtonClassName =
@@ -43,29 +46,26 @@ const Cart = (props) => {
             <p className="text-[0.65rem] sm:text-[0.7rem] uppercase tracking-[0.08em] text-[var(--color-accent)] mt-2 sm:mt-1 inline py-1 font-semibold">
               {props.data.venue} · {props.data.year}
             </p>
-            {props.data.url ? (
-              <Link href={props.data.url}>
-                <h1 className="font-semibold text-[0.84rem] md:text-[0.95rem] xl:text-[1.04rem] 2xl:text-lg theme-heading leading-snug">
-                  {props.data.title}
-                </h1>
-              </Link>
-            ) : (
-              <h1 className="font-semibold text-[0.84rem] md:text-[0.95rem] xl:text-[1.04rem] 2xl:text-lg theme-heading leading-snug">
-                {props.data.title}
-              </h1>
-            )}
+            <h1 className="font-semibold text-[0.84rem] md:text-[0.95rem] xl:text-[1.04rem] 2xl:text-lg theme-heading leading-snug">
+              {props.data.title}
+            </h1>
           </div>
           {props.author && <div className="theme-subtle text-[9px] md:text-xs mt-2 md:mt-4 leading-relaxed">
-            {props.data.authors.map((author, index) => (
+            {props.data.authors.map((author, index) => {
+              const selfClass = isSelfAuthor(author) ? 'author-self' : '';
+              const authorLabel = `${author.name}${author.co ? '*' : ''}`;
+
+              return (
               <span key={index}>
                 {author.link ? (
-                  <Link className="hover:text-[var(--color-heading)]" href={author.link}>{author.name}{author.co ? "*" : ""}</Link>
+                  <Link className={`hover:text-[var(--color-heading)] ${selfClass}`} href={author.link}>{authorLabel}</Link>
                 ) : (
-                  <span>{author.name}{author.co ? "*" : ""}</span>
+                  <span className={selfClass}>{authorLabel}</span>
                 )}
                 {index + 1 !== props.data.authors.length && <span className="theme-subtle"> | </span>}
               </span>
-            ))}
+            );
+            })}
           </div>}
         </div>
         <div className="[&>*]:mt-2 md:[&>*]:mt-3 flex flex-wrap [&>*]:mr-2 mb-0 sm:mb-2">

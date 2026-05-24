@@ -146,6 +146,79 @@ body {
     line-height: 1.05;
   }
 
+  .author-self {
+    display: inline;
+    color: var(--color-heading);
+    font-weight: 500;
+    background-image: linear-gradient(
+      color-mix(in srgb, var(--color-accent) 55%, transparent),
+      color-mix(in srgb, var(--color-accent) 55%, transparent)
+    );
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    padding-bottom: 0.06em;
+  }
+
+  .hobby-tag {
+    display: inline-block;
+    padding: 0.15rem 0.2rem;
+    border-radius: 9999px;
+    cursor: default;
+    transition: transform 0.2s ease;
+  }
+
+  .hobby-tag:hover {
+    transform: scale(1.15);
+  }
+
+  .hobby-tag .emoji-wrapper {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .hobby-tag .emoji-static,
+  .hobby-tag .emoji-animated img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .hobby-tag .emoji-animated {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hobby-tag:hover .emoji-static {
+    display: none;
+  }
+
+  .hobby-tag:hover .emoji-animated {
+    display: block;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hobby-tag:hover {
+      transform: none;
+    }
+
+    .hobby-tag:hover .emoji-static {
+      display: block;
+    }
+
+    .hobby-tag:hover .emoji-animated {
+      display: none;
+    }
+  }
+
   .mobile-social-dock {
     display: flex;
     align-items: center;
@@ -269,6 +342,19 @@ body {
 
   /* Mobile intro social SVGs use #798D9C; in dark mode match prior white glyph look */
   .dark .mobile-intro-social-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  /* Desktop intro Scholar — match react-icons: dark in light mode, white in dark mode */
+  .intro-scholar-icon {
+    filter: brightness(0) saturate(100%);
+  }
+
+  .dark .intro-scholar-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  .group:hover .intro-scholar-icon {
     filter: brightness(0) invert(1);
   }
 

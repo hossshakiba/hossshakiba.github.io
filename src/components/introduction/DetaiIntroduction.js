@@ -3,6 +3,7 @@ import Image from 'next/image';
 import EducationButton from '../EducationButton';
 import Educations from '../Educations';
 import introductionRectangle1 from '../../../public/images/illustrations/introduction-rectangle-1.svg';
+import NotCodingHobbies from './NotCodingHobbies';
 import { useState } from 'react';
 
 const DetaiIntroduction = (props) => {
@@ -23,6 +24,10 @@ const DetaiIntroduction = (props) => {
                 <p className="theme-heading text-sm md:text-[0.96rem] 2xl:text-base 3xl:text-lg text-justify mt-2 xl:mt-3 3xl:mt-5">
                     Feel free to reach out. I'm open to collaborations!
                 </p>
+                <NotCodingHobbies
+                    data={props.hobbiesData}
+                    className="mt-4 xl:mt-5 3xl:mt-6"
+                />
                 <EducationButton showEducation={showEducation} setShowEducation={setShowEducation} />
                 <div
                     id="Educations"

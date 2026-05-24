@@ -1,12 +1,10 @@
 import introductionRectangle2 from '../../../public/images/illustrations/rectangle-27-8.svg';
 import introductionRectangle3 from '../../../public/images/illustrations/introduction-rectangle-2.svg';
-import googleScholar from '../../../public/images/social/googleScholar.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getData } from '../../../lib/getData';
 import { BASE_URL } from '../../config';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { SiGooglescholar } from 'react-icons/si';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { BsFileEarmarkText } from 'react-icons/bs';
 import { FaXTwitter } from 'react-icons/fa6';
@@ -36,8 +34,17 @@ const ImageIntroduction = () => {
             gradient: "from-red-600 to-orange-300"
         },
         {
-            icon: <SiGooglescholar className="w-4 h-4 mr-1.5" />,
-            text: "Google Scholar",
+            icon: (
+                <Image
+                    src={`${BASE_URL}/images/mobileSocialMedia/googleScholar.svg`}
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="intro-scholar-icon mr-1.5 h-4 w-4 shrink-0"
+                    style={{ objectFit: 'contain' }}
+                />
+            ),
+            text: "Scholar",
             link: "https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1",
             gradient: "from-cyan-500 to-blue-500"
         },

@@ -10,6 +10,7 @@ import { showDecorSketches } from '@/config/decorSketches';
 
 const Introduction = async () => {
     const educationData = getData('educations.json');
+    const hobbiesData = getData('hobbies.json');
 
     return (
         <div
@@ -36,7 +37,7 @@ const Introduction = async () => {
             )}
             <div className="content-shell grid md:grid-cols-[minmax(0,1.06fr)_minmax(0,0.94fr)] lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] md:gap-0 pt-7 3xl:pt-8">
                 <MobileIntroduction />
-                <DetaiIntroduction educationData={educationData} />
+                <DetaiIntroduction educationData={educationData} hobbiesData={hobbiesData} />
                 <ImageIntroduction />
             </div>
         </div>

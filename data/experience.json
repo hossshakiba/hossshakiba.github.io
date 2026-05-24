@@ -10,7 +10,7 @@
             "date": "Apr 2025 - Present",
             "information": [
                 "Under the supervision of Prof. Anna Rohrbach.",
-                "Proposed Obliviate, a novel concept erasure method for autoregressive image generation models.",
+                "Proposed Obliviate, a concept erasure method for autoregressive image generation models.",
                 "Worked on the first multimodal backdoor attacks targeting unified autoregressive models.",
                 "Researched learning and personalizing relational concepts in text-to-image diffusion models."
             ]
@@ -24,8 +24,8 @@
             "date": "May 2023 - June 2024",
             "information": [
                 "Under the supervision of Prof. Hassan Khotanlou.",
-                "Collaborated on a project focused on cloud removal from satellite imagery.",
-                "Proposed an autoencoder-based model for low-light light image enhancement. Published a journal paper."
+                "Worked on low-level vision tasks, such as low-light image enhancement and cloud removal from satellite imagery.",
+                "Published a paper in the Digital Signal Processing Journal."
             ]
         },
         {
@@ -37,7 +37,8 @@
             "date": "October 2022 - April 2023",
             "information": [
                 "Under the supervision of Prof. Muharram Mansoorizadeh.",
-                "Proposed a deep learning framework for detecting and grading diabetic retinopathy. Published a journal paper."
+                "Proposed a deep learning framework for detecting and grading diabetic retinopathy.",
+                "Published a paper in the Biomedical Signal Processing and Control Journal."
             ]
         },
         {

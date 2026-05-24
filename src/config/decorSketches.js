@@ -6,7 +6,7 @@
  * Optional: set `NEXT_PUBLIC_DECOR_SKETCHES=false` in `.env.local` to disable at build time
  * (overrides the code flag when set to false). Restart dev server after changing env.
  */
-const DECOR_SKETCHES_CODE_ENABLED = true;
+const DECOR_SKETCHES_CODE_ENABLED = false;
 
 const env = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_DECOR_SKETCHES : undefined;
 const envForcesOff = env === 'false' || env === '0';

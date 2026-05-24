@@ -116,7 +116,7 @@ const Publications = (props) => {
         <div className="section-heading">
           <p className="section-title">Publications</p>
           <div className="section-divider"></div>
-          <p className="theme-muted text-xs sm:text-sm mt-3 tracking-[0.01em]">For a complete list of research works, see my <a className="theme-link transition-colors duration-150" href="https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1">Google Scholar</a>.</p>
+          <p className="theme-muted text-xs sm:text-sm mt-3 tracking-[0.01em]">For a complete list of my research works, see my <a className="theme-link transition-colors duration-150" href="https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1">Google Scholar</a>.</p>
         </div>
         <div className="flex flex-col items-center justify-center pt-4 xl:pt-8">
           {props.data.publications.slice(0, 4).map((publication, index) =>
