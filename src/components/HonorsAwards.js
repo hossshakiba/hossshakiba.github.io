@@ -5,7 +5,7 @@ import { HiSparkles } from 'react-icons/hi2';
 const HonorsAwards = ({ data }) => {
   const [showAllAwards, setShowAllAwards] = useState(false);
   const awards = data?.awards ?? [];
-  const INITIAL_VISIBLE_COUNT = 3;
+  const INITIAL_VISIBLE_COUNT = 4;
   const visibleAwards = showAllAwards ? awards : awards.slice(0, INITIAL_VISIBLE_COUNT);
 
   if (!awards.length) return null;

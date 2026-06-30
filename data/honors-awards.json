@@ -1,6 +1,10 @@
 {
     "awards": [
         {
+            "date" : "April 2026",
+            "text" : ["ELIZA Research-Oriented Master's Scholarship, Awarded to Exceptional Students in AI and Machine Learning"]
+        },
+        {
             "date" : "November 2025",
             "text" : ["1st Place in the Rayan International AI Contest, Tehran, Iran"]
         },

@@ -1,6 +1,33 @@
 {
     "news": [
         {
+            "date": "June 2026",
+            "text": [
+                "One co-first author paper accepted to ECCV 2026! 🎉 Looking forward to presenting ",
+                {
+                    "word": "Obliviate",
+                    "url": "https://arxiv.org/abs/2606.28643"
+                },
+                " -- see you in Malmö! 🇸🇪 "
+            ]
+        },
+        {
+            "date": "April 2026",
+            "text": [
+                "I received the ",
+                {
+                    "word": "ELIZA Research-Oriented Master's Scholarship",
+                    "url": "https://eliza.school/opportunities/research-oriented-masters-scholarships/"
+                },
+                " from ",
+                {
+                    "word": "Zuse School ELIZA",
+                    "url": "https://eliza.school/"
+                },
+                "! 🎉"
+            ]
+        },
+        {
             "date": "November 2025",
             "text": [
                 "Ranked 🥇 1st in the ",

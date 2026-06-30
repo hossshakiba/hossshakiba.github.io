@@ -2,7 +2,7 @@
   "publications": [
     {
       "title": "Obliviate: Erasing Concepts from Autoregressive Image Generation Models",
-      "venue": "arXiv (soon)",
+      "venue": "ECCV",
       "year": "2026",
       "authors": [
         {
@@ -42,7 +42,20 @@
         }
       ],
       "image": "/images/publications/obliviate1.png",
-      "imageHover": "/images/publications/obliviate2.png"
+      "imageHover": "/images/publications/obliviate2.png",
+        "bibtex": {
+        "data": {
+          "@misc": "shakibania2026obliviateerasingconceptsautoregressive,",
+          "title": "Obliviate: Erasing Concepts from Autoregressive Image Generation Models",
+          "author": "Hossein Shakibania and Jonas Henry Grebe and Tobias Braun and Ege Aktemur and Saleh Aslani and Mehmet Görkem Yiğit and Marcus Rohrbach",
+          "year": "2026",
+          "eprint": "2606.28643",
+          "archivePrefix": "arXiv",
+          "primaryclass": "cs.CR",
+          "url": "https://arxiv.org/abs/2606.28643"
+        }
+      },
+      "pdf": "https://arxiv.org/abs/2606.28643"
     },
     {
       "title": "Token by Token, Compromised: Backdoor Vulnerabilities in Unified Autoregressive Models",
