@@ -55,7 +55,8 @@
           "url": "https://arxiv.org/abs/2606.28643"
         }
       },
-      "pdf": "https://arxiv.org/abs/2606.28643"
+      "pdf": "https://arxiv.org/abs/2606.28643",
+      "code": "https://github.com/multimodal-ai-lab/Obliviate"
     },
     {
       "title": "Token by Token, Compromised: Backdoor Vulnerabilities in Unified Autoregressive Models",
