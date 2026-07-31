@@ -579,7 +579,6 @@ body {
     background: color-mix(in srgb, var(--color-surface-soft) 78%, var(--color-surface));
     border: 1.5px dashed color-mix(in srgb, var(--color-accent) 42%, var(--color-border));
     border-radius: 0.55rem;
-    transform: rotate(-1.1deg);
     box-shadow: 0 1px 0 color-mix(in srgb, var(--color-heading) 4%, transparent);
   }
 
@@ -682,14 +681,6 @@ body {
     flex-shrink: 0;
   }
 
-  .intro-social-link:nth-child(odd) {
-    transform: rotate(-1.4deg);
-  }
-
-  .intro-social-link:nth-child(even) {
-    transform: rotate(1.2deg);
-  }
-
   .intro-social-link:hover,
   .intro-social-link:focus-visible {
     color: var(--color-accent-strong);
@@ -697,7 +688,7 @@ body {
     border-color: var(--color-accent);
     border-style: solid;
     outline: none;
-    transform: rotate(0deg) translateY(-2px) scale(1.03);
+    transform: translateY(-2px) scale(1.03);
     box-shadow: 0 6px 16px color-mix(in srgb, var(--color-accent) 16%, transparent);
   }
 
@@ -736,14 +727,6 @@ body {
   .intro-socials--mobile .intro-scholar-icon {
     width: 1.15rem;
     height: 1.15rem;
-  }
-
-  .intro-socials--mobile .intro-social-link:nth-child(odd) {
-    transform: rotate(-0.8deg);
-  }
-
-  .intro-socials--mobile .intro-social-link:nth-child(even) {
-    transform: rotate(0.7deg);
   }
 
   @media (min-width: 1920px) {
