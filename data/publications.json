@@ -1,9 +1,61 @@
 {
   "publications": [
     {
+      "title": "VETO: Towards Protecting User Images From Frontier AI Editing",
+      "venue": "Under Review",
+      "year": "2026",
+      "featured": true,
+      "authors": [
+        {
+          "name": "JH. Grebe",
+          "link": "https://scholar.google.com/citations?hl=en&user=dvz7WRQAAAAJ",
+          "co": true
+        },
+        {
+          "name": "H. Shakibania",
+          "link": "https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1",
+          "co": true
+        },
+        {
+          "name": "T. Braun",
+          "link": "https://scholar.google.com/citations?user=wqVWJNIAAAAJ&hl=en",
+          "co": false
+        },
+        {
+          "name": "M. Rohrbach",
+          "link": "https://scholar.google.com/citations?user=3kDtybgAAAAJ&hl=en",
+          "co": false
+        },
+        {
+          "name": "A. Rohrbach",
+          "link": "https://scholar.google.com/citations?user=GHpxNQIAAAAJ&hl=en",
+          "co": false
+        }
+      ],
+      "image": "/images/publications/veto1.png",
+      "imageHover": "/images/publications/veto2.png",
+      "bibtex": {
+        "data": {
+          "@misc": "grebe2026vetoprotectingimagesfrontier",
+          "title": "VETO: Towards Protecting User Images From Frontier AI Editing",
+          "author": "Jonas Grebe and Hossein Shakibania and Tobias Braun and Marcus Rohrbach and Anna Rohrbach",
+          "year": "2026",
+          "archivePrefix": "arXiv",
+          "primaryClass": "cs.CV",
+          "url": "https://arxiv.org/abs/2607.27292"
+        }
+      },
+      "abstract": "VETO is an anti-edit cloak that protects images from unauthorized editing by frontier AI models, disrupting how they read reference images through joint attention. We also introduce VetoBench, spanning closed-frame edits that modify the original scene and open-frame edits that recontextualize a subject in a newly generated one.",
+      "projectPage": "https://jonasgrebe.github.io/research/projects/veto/",
+      "pdf": "https://arxiv.org/abs/2607.27292",
+      "code": "https://github.com/multimodal-ai-lab/VETO",
+      "huggingFace": "https://huggingface.co/spaces/Hossshakiba/VETO"
+    },
+    {
       "title": "Obliviate: Erasing Concepts from Autoregressive Image Generation Models",
       "venue": "ECCV",
       "year": "2026",
+      "featured": true,
       "authors": [
         {
           "name": "H. Shakibania",
@@ -55,12 +107,14 @@
           "url": "https://arxiv.org/abs/2606.28643"
         }
       },
+      "abstract": "Obliviate erases concepts from autoregressive image generators by aligning conditional and pseudo-unconditional branches on shared visual prefixes, then applying KL supervision over full generation trajectories. Evaluated on Liquid, Emu3-Gen, and Janus-Pro, it removes targets like nudity or brands without collapsing model utility.",
+      "projectPage": "https://jonasgrebe.github.io/research/projects/obliviate/",
       "pdf": "https://arxiv.org/abs/2606.28643",
       "code": "https://github.com/multimodal-ai-lab/Obliviate"
     },
     {
       "title": "Token by Token, Compromised: Backdoor Vulnerabilities in Unified Autoregressive Models",
-      "venue": "arXiv",
+      "venue": "Under Review",
       "year": "2026",
       "authors": [
         {
@@ -103,11 +157,13 @@
           "url": "https://arxiv.org/abs/2605.19227"
         }
       },
+      "abstract": "We show that unified autoregressive models can be backdoored so a subtle trigger poisons both image and text outputs. ToBAC is the first such attack, effective via both data poisoning and model-level injection.",
+      "projectPage": "https://jonasgrebe.github.io/research/projects/token-by-token/",
       "pdf": "https://arxiv.org/abs/2605.19227"
     },
     {
       "title": "The Poisoned Conversation: Privacy-Leaking Watermarks in Unified Multimodal Models",
-      "venue": "arXiv (soon)",
+      "venue": "Under Review",
       "year": "2026",
       "authors": [
         {
@@ -186,6 +242,7 @@
           "author": "Hossein Shakibania and Sina Raoufi and Hassan Khotanlou"
         }
       },
+      "abstract": "CDAN enhances low-light images with an attention-guided autoencoder of convolutional and dense blocks.",
       "pdf": "https://arxiv.org/abs/2308.12902",
       "code": "https://github.com/SinaRaoufi/CDAN",
       "huggingFace": "https://huggingface.co/spaces/Hossshakiba/CDAN"
@@ -237,6 +294,7 @@
           "author": "Hossein Shakibania and Sina Raoufi and Behnam Pourafkham and Hassan Khotanlou and Muharram Mansoorizadeh"
         }
       },
+      "abstract": "A dual-branch deep network detects diabetic retinopathy and grades its stage from a single fundus image. On APTOS 2019 it reaches 98.5% binary accuracy and strong stage-grading performance.",
       "pdf": "https://arxiv.org/abs/2308.09945"
     }
   ]

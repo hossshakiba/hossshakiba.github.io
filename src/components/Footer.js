@@ -6,7 +6,7 @@ import { BASE_URL } from '../config';
 
 const Footer = () => {
     const data = getData('social.json');
-    const lastUpdated = 'July 2026';
+    const lastUpdated = 'August 2026';
 
     return (
         <div className="py-4 px-3 flex flex-col items-center justify-center gap-2 bg-[var(--color-footer-bg)] border-t border-[var(--color-border)]">

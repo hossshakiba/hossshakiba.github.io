@@ -14,19 +14,6 @@ const Header = () => {
     useEffect(() => {
         const rootIsDark = document.documentElement.classList.contains('dark');
         setTheme(rootIsDark ? 'dark' : 'light');
-
-        // Keep theme in sync with OS preference until user explicitly picks a theme.
-        const media = window.matchMedia('(prefers-color-scheme: dark)');
-        const syncFromSystem = (event) => {
-            const saved = localStorage.getItem('theme');
-            if (saved) return;
-            const shouldUseDark = event.matches;
-            document.documentElement.classList.toggle('dark', shouldUseDark);
-            setTheme(shouldUseDark ? 'dark' : 'light');
-        };
-
-        media.addEventListener('change', syncFromSystem);
-        return () => media.removeEventListener('change', syncFromSystem);
     }, []);
 
     useEffect(() => {

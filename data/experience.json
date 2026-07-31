@@ -8,11 +8,16 @@
             "invertInDarkMode": true,
             "type": "Work Study",
             "date": "Apr 2025 - Present",
+            "advisors": [
+                "Prof. Marcus Rohrbach",
+                "Prof. Anna Rohrbach"
+            ],
+            "focus": "Multimodal AI Safety and Reliability",
             "information": [
-                "Under the supervision of Prof. Anna Rohrbach.",
-                "ECCV 2026: Proposed Obliviate, a concept erasure method for autoregressive image generation models.",
-                "Worked on the first multimodal backdoor attacks targeting unified autoregressive models.",
-                "Researched learning and personalizing relational concepts in text-to-image diffusion models."
+                "Co-led VETO, a method for protecting user images against unauthorized editing by DiT / rectified-flow models.",
+                "Proposed Obliviate, a concept-erasure method for autoregressive image generation models (ECCV 2026).",
+                "Contributed to ToBAC, the first multimodal backdoor attack on unified autoregressive models.",
+                "Explored learning and personalizing relational concepts in text-to-image diffusion models."
             ]
         },
         {
@@ -22,10 +27,13 @@
             "logo": "/images/experience/robot.svg",
             "type": "Work Study",
             "date": "May 2023 - June 2024",
+            "advisors": [
+                "Prof. Hassan Khotanlou"
+            ],
+            "focus": "Low-Level Vision",
             "information": [
-                "Under the supervision of Prof. Hassan Khotanlou.",
-                "Worked on low-level vision tasks, such as low-light image enhancement and cloud removal from satellite imagery.",
-                "Published a paper in the Digital Signal Processing Journal."
+                "Developed methods for low-light image enhancement (CDAN) and cloud removal from satellite imagery.",
+                "Published CDAN in Digital Signal Processing."
             ]
         },
         {
@@ -35,10 +43,13 @@
             "invertInDarkMode": true,
             "type": "Work Study",
             "date": "October 2022 - April 2023",
+            "advisors": [
+                "Prof. Muharram Mansoorizadeh"
+            ],
+            "focus": "Medical Image Analysis",
             "information": [
-                "Under the supervision of Prof. Muharram Mansoorizadeh.",
-                "Proposed a deep learning framework for detecting and grading diabetic retinopathy.",
-                "Published a paper in the Biomedical Signal Processing and Control Journal."
+                "Developed a dual-branch network for diabetic retinopathy detection and stage grading.",
+                "Published in Biomedical Signal Processing and Control."
             ]
         },
         {
@@ -48,8 +59,8 @@
             "type": "Part-time",
             "date": "October 2021 - March 2023",
             "information": [
-                "An all-in-one platform for training & deploying deep learning-based computer vision models.",
-                "Developed multiple services within Software and AI teams, including dataset preparation, data augmentation pipeline, image tiling, dataset health-check, backend APIs, etc. using Python, PyTorch, and Django."
+                "Worked across the Software and AI teams on computer-vision tooling for model training and deployment.",
+                "Built dataset prep, augmentation, tiling, health-check, backend APIs, etc. (Python, PyTorch, Django)."
             ]
         }
     ]

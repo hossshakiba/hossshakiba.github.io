@@ -25,8 +25,7 @@ export default function RootLayout({ children }) {
     (function () {
       try {
         var saved = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var shouldUseDark = saved ? saved === 'dark' : prefersDark;
+        var shouldUseDark = saved === 'dark';
         document.documentElement.classList.toggle('dark', shouldUseDark);
       } catch (e) {}
     })();

@@ -22,5 +22,4 @@ const Research = () => {
         </div>
     )
 }
-
 export default Research

@@ -119,17 +119,17 @@ const Publications = (props) => {
           <p className="theme-muted text-xs sm:text-sm mt-3 tracking-[0.01em]">For a complete list of my research works, see my <a className="theme-link transition-colors duration-150" href="https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1">Google Scholar</a>.</p>
         </div>
         <div className="flex flex-col items-center justify-center pt-4 xl:pt-8">
-          {props.data.publications.slice(0, 4).map((publication, index) =>
+          {props.data.publications.slice(0, 6).map((publication, index) =>
             <Cart setCartTitle={setCartTitle} setShowModal={setShowModal} setModalData={setModalData} key={index} author={true} data={publication} />
           )}
         </div>
         <div className={`${showAllPublications ? 'opacity-100' : 'opacity-0'} transition-opacity ease-in duration-700 flex flex-col items-center justify-center`}>
-          {showAllPublications && props.data.publications.slice(4).map((publication, index) =>
+          {showAllPublications && props.data.publications.slice(6).map((publication, index) =>
             <Cart setCartTitle={setCartTitle} setShowModal={setShowModal} setModalData={setModalData} key={index} author={true} data={publication} />
           )}
         </div>
           {
-            props.data.publications.length > 4 &&
+            props.data.publications.length > 6 &&
             <button className="theme-muted text-xs md:text-sm xl:text-base theme-surface-soft border mt-6 py-2 px-4 rounded-lg mx-auto flex mb-10 hover:text-[var(--color-accent)] transition-colors duration-150"
             onClick={() => setShowAllPublications(!showAllPublications)}
           >
