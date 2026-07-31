@@ -244,8 +244,7 @@
       },
       "abstract": "CDAN enhances low-light images with an attention-guided autoencoder of convolutional and dense blocks.",
       "pdf": "https://arxiv.org/abs/2308.12902",
-      "code": "https://github.com/SinaRaoufi/CDAN",
-      "huggingFace": "https://huggingface.co/spaces/Hossshakiba/CDAN"
+      "code": "https://github.com/SinaRaoufi/CDAN"
     },
     {
       "title": "Dual branch deep learning network for detection and stage grading of diabetic retinopathy",
