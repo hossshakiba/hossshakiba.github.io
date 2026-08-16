@@ -307,63 +307,14 @@ body {
 
   .pub-featured {
     background: var(--color-surface);
-    border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border));
+    border-width: 2px;
+    border-color: color-mix(in srgb, var(--color-accent) 72%, var(--color-border));
   }
 
   .dark .pub-featured {
     background: var(--color-surface);
-    border-color: color-mix(in srgb, var(--color-accent) 38%, var(--color-border));
-  }
-
-  .pub-featured-label {
-    position: absolute;
-    top: 0.7rem;
-    left: 0.85rem;
-    right: auto;
-    z-index: 3;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .pub-featured-label::before {
-    content: "";
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 9999px;
-    background: var(--color-accent);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 18%, transparent);
-    animation: pub-featured-blink 1.8s ease-in-out infinite;
-  }
-
-  @keyframes pub-featured-blink {
-    0%,
-    100% {
-      opacity: 1;
-      box-shadow:
-        0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent),
-        0 0 8px color-mix(in srgb, var(--color-accent) 55%, transparent);
-    }
-    50% {
-      opacity: 0.2;
-      box-shadow:
-        0 0 0 3px transparent,
-        0 0 0 transparent;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .pub-featured-label::before {
-      animation: none;
-      opacity: 1;
-    }
+    border-width: 2px;
+    border-color: color-mix(in srgb, var(--color-accent) 68%, var(--color-border));
   }
 
   .pub-abstract-corner {
@@ -445,6 +396,17 @@ body {
     line-height: 1.65;
     letter-spacing: 0.005em;
     text-wrap: pretty;
+  }
+
+  .pub-tldr-label {
+    display: inline-block;
+    margin-right: 0.45rem;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    vertical-align: baseline;
   }
 
   @media (min-width: 768px) {

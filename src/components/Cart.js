@@ -29,7 +29,6 @@ const Cart = (props) => {
           : 'theme-surface'
       }`}
     >
-      {featured && <span className="pub-featured-label">Selected</span>}
       {hasAbstract && (
         <button
           type="button"
@@ -168,7 +167,10 @@ const Cart = (props) => {
           className={`pub-abstract sm:col-span-3 ${abstractOpen ? 'is-open' : ''}`}
         >
           <div className="pub-abstract-inner">
-            <p className="pub-abstract-text">{props.data.abstract}</p>
+            <p className="pub-abstract-text">
+              <span className="pub-tldr-label">TL;DR</span>
+              {props.data.abstract}
+            </p>
           </div>
         </div>
       )}
