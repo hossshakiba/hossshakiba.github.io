@@ -1,6 +1,17 @@
 {
     "news": [
         {
+            "date": "September 2026",
+            "text": [
+                "Our paper ",
+                {
+                    "word": "ToBAC",
+                    "url": "https://arxiv.org/abs/2605.19227"
+                },
+                " is accepted to NeurIPS 2026! 🇦🇺🇺🇸🇫🇷"
+            ]
+        },
+        {
             "date": "June 2026",
             "text": [
                 "One co-first author paper accepted to ECCV 2026! 🎉 Looking forward to presenting ",
@@ -24,7 +35,7 @@
                     "word": "Zuse School ELIZA",
                     "url": "https://eliza.school/"
                 },
-                "! 🎉"
+                "! 🥳"
             ]
         },
         {

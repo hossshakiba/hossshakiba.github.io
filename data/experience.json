@@ -14,9 +14,9 @@
             ],
             "focus": "Multimodal AI Safety and Reliability",
             "information": [
-                "Co-led VETO, a method for protecting user images against unauthorized editing by DiT / rectified-flow models.",
+                "Co-led VETO, a method for protecting user images against unauthorized editing by unified image models.",
                 "Proposed Obliviate, a concept-erasure method for autoregressive image generation models (ECCV 2026).",
-                "Contributed to ToBAC, the first multimodal backdoor attack on unified autoregressive models.",
+                "Contributed to ToBAC, the first multimodal backdoor attack on unified autoregressive models (NeurIPS 2026).",
                 "Explored learning and personalizing relational concepts in text-to-image diffusion models."
             ]
         },
