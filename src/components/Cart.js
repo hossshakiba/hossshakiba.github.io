@@ -8,6 +8,7 @@ import { FaCode } from "react-icons/fa";
 import { SiGoogleslides, SiHuggingface, SiArxiv } from "react-icons/si";
 import { HiChevronDown } from "react-icons/hi2";
 import Link from 'next/link';
+import EraseReveal from './EraseReveal';
 import { BASE_URL, SELF_AUTHOR_NAME } from '../config';
 
 const isSelfAuthor = (author) =>
@@ -17,6 +18,7 @@ const Cart = (props) => {
   const [abstractOpen, setAbstractOpen] = useState(false);
   const featured = Boolean(props.data.featured);
   const hasAbstract = Boolean(props.data.abstract);
+  const useEraseEffect = props.data.hoverEffect === 'erase' && Boolean(props.data.imageHover);
   const abstractId = `abstract-${(props.data.title || 'paper').replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase()}`;
   const actionButtonClassName =
     "w-fit py-1 px-2 font-semibold text-xs sm:text-sm md:text-base border border-[var(--color-border)] theme-muted rounded-md theme-surface hover:bg-[var(--color-surface-soft)] transition-colors duration-150 flex items-center";
@@ -46,7 +48,14 @@ const Cart = (props) => {
         </button>
       )}
       <div className="w-full col-span-1 sm:col-span-1 p-1 ld:p-0 flex items-center justify-center">
-        {/* Inner wrapper shrink-wraps to the in-flow image so `fill` is not tied to the full grid row height */}
+        {useEraseEffect ? (
+          <EraseReveal
+            topSrc={BASE_URL + props.data.image}
+            revealSrc={BASE_URL + props.data.imageHover}
+            sizes="(max-width: 640px) 100vw, 33vw"
+          />
+        ) : (
+        /* Inner wrapper shrink-wraps to the in-flow image so `fill` is not tied to the full grid row height */
         <div className="relative w-full overflow-hidden rounded-lg theme-surface">
           <Image
             src={BASE_URL + props.data.image}
@@ -67,11 +76,12 @@ const Cart = (props) => {
             />
           )}
         </div>
+        )}
       </div>
       <div className="sm:col-span-2 flex flex-col justify-between ml-1.5 sm:ml-2 md:ml-8">
         <div>
           <div className="flex flex-col sm:flex-col-reverse mt-1.5">
-            <p className="text-[0.72rem] sm:text-[0.78rem] uppercase tracking-[0.08em] text-[var(--color-accent)] mt-2 sm:mt-1 inline py-1 font-semibold">
+            <p className="text-[0.72rem] sm:text-[0.78rem] tracking-[0.02em] text-[var(--color-accent)] mt-2 sm:mt-1 inline py-1 font-semibold">
               {props.data.venue} · {props.data.year}
             </p>
             <h1 className="font-semibold text-[0.84rem] md:text-[0.95rem] xl:text-[1.04rem] 2xl:text-lg theme-heading leading-snug">

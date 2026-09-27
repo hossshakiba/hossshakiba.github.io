@@ -4,6 +4,7 @@ import Educations from '../Educations';
 import Hobbies from './Hobbies';
 import { useState } from 'react';
 import { introHand } from './introSocials';
+import DiscreteDiffusionText from './DiscreteDiffusionText';
 
 const DetaiIntroduction = (props) => {
     const [showEducation, setShowEducation] = useState(false);
@@ -11,6 +12,7 @@ const DetaiIntroduction = (props) => {
     return (
         <div id="aboutSection" className="scroll-mt-32 min-w-0 md:pl-8 lg:pl-10 xl:pl-12">
             <div className="mb-32 3xl:mb-40 mt-[2rem] lg:mt-[5rem] 3xl:mt-[8rem]">
+                <DiscreteDiffusionText signalReady>
                 <p className="theme-muted text-xl xl:text-2xl 3xl:text-3xl font-medium mb-2 xl:mb-3 hidden md:block">Hello! I’m</p>
                 <h2 className="theme-heading text-2xl xl:text-3xl 3xl:text-5xl font-semibold hidden md:block"><span className="name-accent">Hossein Shakibania</span></h2>
                 <p className="theme-heading text-sm md:text-[0.96rem] 2xl:text-base 3xl:text-lg text-justify mt-1 md:mt-4 xl:mt-6 3xl:mt-10">
@@ -26,9 +28,10 @@ const DetaiIntroduction = (props) => {
                     <span className="intro-note-mark" aria-hidden>*</span>
                     <span className="intro-note-text">Currently looking for PhD positions — happy to chat.</span>
                 </p>
+                </DiscreteDiffusionText>
                 <Hobbies
                     data={props.hobbiesData}
-                    className="mt-4 xl:mt-5 3xl:mt-6"
+                    className="mt-4 xl:mt-5 3xl:mt-6 intro-after [--intro-delay:200ms]"
                 />
                 <EducationButton showEducation={showEducation} setShowEducation={setShowEducation} />
                 <div

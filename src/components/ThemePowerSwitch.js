@@ -1,12 +1,21 @@
 'use client';
 
+import { useState } from 'react';
+import { introHand } from './introduction/introSocials';
+
 /**
  * Horizontal wall-style switch: paddle left = light (day / ☀), right = dark (night / 🌙).
  * `compact` — tighter for mobile drawer / md header.
  */
-export default function ThemePowerSwitch({ theme, onToggle, compact = false }) {
+export default function ThemePowerSwitch({ theme, onToggle, compact = false, spellSide = 'left' }) {
+  const [spell, setSpell] = useState(null);
   const isDark = theme === 'dark';
   const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+
+  const handleClick = (event) => {
+    setSpell((prev) => ({ name: isDark ? 'lumos' : 'nox', id: (prev?.id ?? 0) + 1 }));
+    onToggle(event);
+  };
 
   const shell =
     compact
@@ -26,7 +35,8 @@ export default function ThemePowerSwitch({ theme, onToggle, compact = false }) {
       aria-label={label}
       aria-pressed={isDark}
       title={label}
-      onClick={onToggle}
+      data-theme-switch
+      onClick={handleClick}
       className={`relative flex shrink-0 items-center border-2 border-[#6b6358] bg-gradient-to-b from-[#ebe4d6] via-[#d9d0c0] to-[#c4b9a8] shadow-[0_3px_10px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.5)] outline-none transition-transform duration-150 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-nav-bg)] active:scale-[0.98] dark:border-[#5a6574] dark:from-[#4a5565] dark:via-[#3d4655] dark:to-[#323a48] dark:shadow-[0_3px_12px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] ${shell}`}
     >
       <span className={`absolute ${screw} rounded-full bg-[#3d3830] opacity-50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] dark:bg-[#1e2228] dark:opacity-70`} />
@@ -66,6 +76,17 @@ export default function ThemePowerSwitch({ theme, onToggle, compact = false }) {
       >
         🌙
       </span>
+
+      {spell && (
+        <span
+          key={spell.id}
+          aria-hidden
+          className={`spell-caption spell-caption--${spell.name} ${spellSide === 'right' ? 'spell-caption--right' : ''} ${introHand.className}`}
+          onAnimationEnd={() => setSpell(null)}
+        >
+          {spell.name === 'lumos' ? 'Lumos ✦' : 'Nox ☾'}
+        </span>
+      )}
     </button>
   );
 }

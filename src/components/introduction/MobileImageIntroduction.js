@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import ProfileCarousel from './ProfileCarousel';
 import { introHand, introSocialButtons } from './introSocials';
+import DiscreteDiffusionText from './DiscreteDiffusionText';
 
 const MobileIntroduction = () => {
   const profileImages = [
     '/images/profiles/prof-1.JPG',
     '/images/profiles/prof-2.JPG',
-    '/images/profiles/prof-3.png',
   ];
 
   return (
@@ -23,11 +23,13 @@ const MobileIntroduction = () => {
             />
           </div>
           <div className="flex min-w-0 max-w-[12rem] flex-col items-start pt-1 leading-tight sm:max-w-[13rem]">
-            <p className="theme-muted text-[0.8125rem]">Hello! I'm</p>
-            <p className="theme-heading mt-1 text-lg font-semibold">
-              <span className="name-accent">Hossein Shakibania</span>
-            </p>
-            <div className={`intro-role-caption intro-role-caption--mobile ${introHand.className}`}>
+            <DiscreteDiffusionText>
+              <p className="theme-muted text-[0.8125rem]">Hello! I'm</p>
+              <p className="theme-heading mt-1 text-lg font-semibold">
+                <span className="name-accent">Hossein Shakibania</span>
+              </p>
+            </DiscreteDiffusionText>
+            <div className={`intro-role-caption intro-role-caption--mobile intro-after ${introHand.className}`}>
               <p className="intro-role-title">MS Student in AIML</p>
               <p className="intro-role-place">TU Darmstadt</p>
             </div>
@@ -35,7 +37,7 @@ const MobileIntroduction = () => {
         </div>
 
         <nav
-          className={`intro-socials intro-socials--mobile ${introHand.className}`}
+          className={`intro-socials intro-socials--mobile intro-after [--intro-delay:120ms] ${introHand.className}`}
           aria-label="Social links"
         >
           {introSocialButtons.map((button) => (

@@ -95,16 +95,18 @@
       ],
       "image": "/images/publications/obliviate1.png",
       "imageHover": "/images/publications/obliviate2.png",
+      "hoverEffect": "erase",
         "bibtex": {
         "data": {
-          "@misc": "shakibania2026obliviateerasingconceptsautoregressive,",
+          "@InProceedings": "shakibania2026obliviateerasingconceptsautoregressive,",
+          "author": "Shakibania, Hossein and Grebe, Jonas Henry and Braun, Tobias and Aktemur, Ege and Aslani, Saleh and Yiğit, Mehmet G. and Rohrbach, Marcus",
           "title": "Obliviate: Erasing Concepts from Autoregressive Image Generation Models",
-          "author": "Hossein Shakibania and Jonas Henry Grebe and Tobias Braun and Ege Aktemur and Saleh Aslani and Mehmet Görkem Yiğit and Marcus Rohrbach",
+          "booktitle": "Computer Vision -- ECCV 2026",
           "year": "2026",
-          "eprint": "2606.28643",
-          "archivePrefix": "arXiv",
-          "primaryclass": "cs.CV",
-          "url": "https://arxiv.org/abs/2606.28643"
+          "publisher": "Springer Nature Switzerland",
+          "address": "Cham",
+          "pages": "665--683",
+          "isbn": "978-3-032-37324-3"
         }
       },
       "abstract": "Obliviate erases concepts from autoregressive image generators by aligning conditional and pseudo-unconditional branches on shared visual prefixes, then applying KL supervision over full generation trajectories. Evaluated on Liquid, Emu3-Gen, and Janus-Pro, it removes targets like nudity or brands without collapsing model utility.",

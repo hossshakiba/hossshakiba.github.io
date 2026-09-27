@@ -6,13 +6,13 @@ import { BASE_URL } from '../config';
 
 const Footer = () => {
     const data = getData('social.json');
-    const lastUpdated = 'August 2026';
+    const lastUpdated = 'September 2026';
 
     return (
         <div className="py-4 px-3 flex flex-col items-center justify-center gap-2 bg-[var(--color-footer-bg)] border-t border-[var(--color-border)]">
             <ul className="flex items-center [&>*]:mx-1.5 md:[&>*]:mx-3 justify-center">
                 {data.socialMedias.map(socialMedia =>
-                    <li>
+                    <li key={socialMedia.alt}>
                         <Link href={socialMedia.link}>
                             <Image
                                 alt={socialMedia.alt}

@@ -1,15 +1,25 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import { flushSync } from 'react-dom';
 import Link from 'next/link';
-import Image from "next/image";
-import menu from '../../public/images/icons/menu.svg';
-import Script from 'next/script';
 import ThemePowerSwitch from './ThemePowerSwitch';
+const NAV_ITEMS = [
+    { id: 'aboutSection', label: 'About' },
+    { id: 'newsSection', label: 'News' },
+    { id: 'publicationSection', label: 'Publications' },
+    { id: 'experienceSection', label: 'Experience' },
+    { id: 'HonorsSection', label: 'Achievements' },
+    // { id: 'TalksSection', label: 'Presentations' },
+    // { id: 'AcademicServiceSection', label: 'Academic Service' },
+];
 
 const Header = () => {
     const [mobileBar, setMobileBar] = useState(false);
     const [activeSection, setActiveSection] = useState('');
     const [theme, setTheme] = useState('light');
+    const [scrolled, setScrolled] = useState(false);
+    const [indicator, setIndicator] = useState(null);
+    const linkRefs = useRef({});
 
     useEffect(() => {
         const rootIsDark = document.documentElement.classList.contains('dark');
@@ -18,128 +28,155 @@ const Header = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = document.querySelectorAll('[id*="Section"]');
-            if (sections.length === 0) return;
-
+            setScrolled(window.scrollY > 8);
             const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    setActiveSection(section.id);
-                }
-
+            let current = '';
+            NAV_ITEMS.forEach(({ id }) => {
+                const section = document.getElementById(id);
+                if (section && scrollPosition >= section.offsetTop) current = id;
             });
+            setActiveSection(current);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleTheme = () => {
-        const nextTheme = theme === 'dark' ? 'light' : 'dark';
-        const shouldUseDark = nextTheme === 'dark';
-        document.documentElement.classList.toggle('dark', shouldUseDark);
+    useLayoutEffect(() => {
+        const measure = () => {
+            const el = linkRefs.current[activeSection];
+            setIndicator(el ? { left: el.offsetLeft, width: el.offsetWidth } : null);
+        };
+        measure();
+        window.addEventListener('resize', measure);
+        document.fonts?.ready.then(measure);
+        return () => window.removeEventListener('resize', measure);
+    }, [activeSection]);
+
+    const applyTheme = (nextTheme) => {
+        document.documentElement.classList.toggle('dark', nextTheme === 'dark');
         localStorage.setItem('theme', nextTheme);
         setTheme(nextTheme);
     };
 
+    const toggleTheme = (event) => {
+        const nextTheme = theme === 'dark' ? 'light' : 'dark';
+        const root = document.documentElement;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!document.startViewTransition || reduceMotion) {
+            applyTheme(nextTheme);
+            return;
+        }
+
+        const rect = event?.currentTarget?.getBoundingClientRect();
+        const x = rect ? rect.left + rect.width / 2 : window.innerWidth / 2;
+        const y = rect ? rect.top + rect.height / 2 : 0;
+        const radius = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+        );
+
+        root.classList.add('theme-transitioning');
+        const transition = document.startViewTransition(() => {
+            flushSync(() => applyTheme(nextTheme));
+        });
+
+        transition.ready.then(() => {
+            root.animate(
+                {
+                    clipPath: [
+                        `circle(0px at ${x}px ${y}px)`,
+                        `circle(${radius}px at ${x}px ${y}px)`,
+                    ],
+                },
+                {
+                    duration: 700,
+                    easing: 'cubic-bezier(0.65, 0, 0.35, 1)',
+                    pseudoElement: '::view-transition-new(root)',
+                }
+            );
+        });
+
+        transition.finished.finally(() => root.classList.remove('theme-transitioning'));
+    };
+
     return (
-        <div className='relative'>
-            <Script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module" />
-            <div className="fixed w-full z-40 flex justify-between items-center overflow-visible px-6 sm:px-8 lg:px-12 py-3.5 bg-[var(--color-nav-bg)] border-b border-[var(--color-border)]">
-                <div className="flex items-center -ml-10 sm:ml-0">
-                    <dotlottie-player 
-                        src="https://lottie.host/52a91e22-eb41-402a-8aa8-b468973c57cb/WHWL3xqQJH.lottie" 
-                        background="transparent" 
-                        speed="1" 
-                        style={{ 
-                            width: '100px', 
-                            height: '50px',
-                            filter: 'hue-rotate(90deg)'
-                        }} 
-                        loop 
-                        autoplay
-                    />
+        <header className={`site-nav ${scrolled ? 'is-scrolled' : ''}`}>
+            <div className="content-shell flex h-16 items-center justify-between gap-4">
+                <nav aria-label="Sections" className="hidden md:block">
+                    <ul className="nav-pill">
+                        {indicator && (
+                            <li
+                                aria-hidden
+                                className="nav-pill-indicator"
+                                style={{ transform: `translateX(${indicator.left}px)`, width: indicator.width }}
+                            />
+                        )}
+                        {NAV_ITEMS.map(({ id, label }) => (
+                            <li key={id}>
+                                <Link
+                                    href={`#${id}`}
+                                    ref={(el) => { linkRefs.current[id] = el; }}
+                                    aria-current={activeSection === id ? 'location' : undefined}
+                                    className={`nav-pill-link ${activeSection === id ? 'is-active' : ''}`}
+                                >
+                                    {label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+
+                <span className="nav-mobile-title md:hidden">
+                    {NAV_ITEMS.find(({ id }) => id === activeSection)?.label ?? 'About'}
+                </span>
+
+                <div className="flex items-center gap-2.5 lg:gap-3">
+                    <div className="hidden md:flex lg:hidden items-center">
+                        <ThemePowerSwitch theme={theme} onToggle={toggleTheme} compact />
+                    </div>
+                    <div className="hidden lg:flex items-center">
+                        <ThemePowerSwitch theme={theme} onToggle={toggleTheme} />
+                    </div>
+                    <button
+                        type="button"
+                        className={`nav-burger md:hidden ${mobileBar ? 'is-open' : ''}`}
+                        aria-label={mobileBar ? 'Close menu' : 'Open menu'}
+                        aria-expanded={mobileBar}
+                        onClick={() => setMobileBar(!mobileBar)}
+                    >
+                        <span />
+                        <span />
+                        <span />
+                    </button>
                 </div>
-                {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-7 text-[0.92rem]">
-                    <Link href="#aboutSection">
-                        <li className={activeSection === 'aboutSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>About</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'aboutSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
-                    </Link>
-                    <Link href="#newsSection">
-                        <li className={activeSection === 'newsSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>News</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'newsSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
-                    </Link>
-                    <Link href="#publicationSection">
-                        <li className={activeSection === 'publicationSection' ? 'text-[var(--color-nav-active)] ' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>Publications</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'publicationSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
-                    </Link>
-                    <Link href="#experienceSection">
-                        <li className={activeSection === 'experienceSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>Experience</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'experienceSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
-                    </Link>
-                    <Link href="#HonorsSection">
-                        <li className={activeSection === 'HonorsSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>Achievements</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'HonorsSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
-                    </Link>
-                    <Link href="#TalksSection">
-                        <li className={activeSection === 'TalksSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)] hover:text-[var(--color-nav-active)] transition-all duration-700'}>Presentations</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'TalksSection' ? 'bg-[var(--color-nav-active)]' : 'bg-transparent'}`}></div>
-                    </Link>
-                    {/* <Link href="#AcademicServiceSection">
-                        <li className={activeSection === 'AcademicServiceSection' ? 'text-[#B1C7DE]' : 'text-white hover:text-[#B1C7DE] transition-all duration-700'}>Academic Service</li>
-                        <div className={`w-full h-[3px] rounded-lg transition-all duration-700 ${activeSection === 'AcademicServiceSection' ? 'bg-[#B1C7DE]' : 'bg-transparent'}`}></div>
-                    </Link> */}
+            </div>
+
+            <div
+                className={`nav-drawer md:hidden ${mobileBar ? 'is-open' : ''}`}
+                aria-hidden={!mobileBar}
+            >
+                <ul className="content-shell flex flex-col gap-1 pt-3 pb-5">
+                    {NAV_ITEMS.map(({ id, label }) => (
+                        <li key={id}>
+                            <Link
+                                href={`#${id}`}
+                                tabIndex={mobileBar ? 0 : -1}
+                                onClick={() => setMobileBar(false)}
+                                className={`nav-drawer-link ${activeSection === id ? 'is-active' : ''}`}
+                            >
+                                {label}
+                            </Link>
+                        </li>
+                    ))}
+                    <li className="mt-3 flex items-center gap-3 border-t border-white/10 pt-4">
+                        <ThemePowerSwitch theme={theme} onToggle={toggleTheme} compact spellSide="right" />
+                    </li>
                 </ul>
-                <div className="hidden md:flex lg:hidden items-center">
-                    <ThemePowerSwitch theme={theme} onToggle={toggleTheme} compact />
-                </div>
-                <div className="hidden lg:flex items-center">
-                    <ThemePowerSwitch theme={theme} onToggle={toggleTheme} />
-                </div>
-                <button className="md:hidden" onClick={() => setMobileBar(!mobileBar)}>
-                    <Image alt="menu" src={menu} />
-                </button>
             </div>
-            {/* {mobileBar && ( */}
-            <div className={`md:hidden fixed top-16 left-0 w-full bg-[var(--color-nav-bg)] text-[var(--color-nav-text)] font-semibold text-sm flex flex-col items-start px-6 sm:px-8 pt-7 pb-6 space-y-4 border-b border-[var(--color-border)]
-                ${mobileBar ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'}
-                transform transition-all duration-500 ease-in-out z-20`}>
-                <Link href="#aboutSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'aboutSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>About</span>
-                </Link>
-                <Link href="#newsSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'newsSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>News</span>
-                </Link>
-                <Link href="#publicationSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'publicationSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>Publications</span>
-                </Link>
-                <Link href="#experienceSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'experienceSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>Experience</span>
-                </Link>
-                <Link href="#HonorsSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'HonorsSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>Achievements</span>
-                </Link>
-                <Link href="#TalksSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'TalksSection' ? 'text-[var(--color-nav-active)]' : 'text-[var(--color-nav-text)]'}>Presentations</span>
-                </Link>
-                <div className="w-full border-t border-[var(--color-border)] pt-4">
-                    <ThemePowerSwitch theme={theme} onToggle={toggleTheme} compact />
-                </div>
-                {/* <Link href="#AcademicServiceSection" onClick={() => setMobileBar(false)}>
-                    <span className={activeSection === 'AcademicServiceSection' ? 'text-[#B1C7DE]' : 'text-white'}>Academic Service</span>
-                </Link> */}
-            </div>
-            {/* )} */}
-        </div>
+        </header>
     );
 };
 

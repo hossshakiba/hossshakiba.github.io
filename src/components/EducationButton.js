@@ -15,7 +15,7 @@ const EducationButton = (props) => {
     }
 
     return (
-        <button type="button" className="flex items-center mt-6 mb-10" onClick={handleClick}>
+        <button type="button" className="flex items-center mt-6 mb-10 intro-after [--intro-delay:320ms]" onClick={handleClick}>
             {props.showEducation ? <Image alt="" src={downArrow} /> : <Image alt="" src={rightArrow} />}
             <span className="theme-heading text-[0.95rem] lg:text-[1.04rem] xl:text-[1.08rem] 2xl:text-[1.14rem] font-semibold ml-2">
                 Education
