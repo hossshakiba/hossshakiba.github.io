@@ -12,7 +12,7 @@ export const introSocialButtons = [
   {
     text: 'email',
     title: 'Email',
-    link: 'mailto:shakibaia.hossein@gmail.com',
+    link: 'mailto:shakibania.hossein@gmail.com',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <rect x="3" y="5" width="18" height="14" rx="2" />
