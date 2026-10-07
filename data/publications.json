@@ -98,13 +98,12 @@
       "hoverEffect": "erase",
         "bibtex": {
         "data": {
-          "@InProceedings": "shakibania2026obliviateerasingconceptsautoregressive,",
+          "@InProceedings": "shakibania2026obliviate,",
           "author": "Shakibania, Hossein and Grebe, Jonas Henry and Braun, Tobias and Aktemur, Ege and Aslani, Saleh and Yiğit, Mehmet G. and Rohrbach, Marcus",
           "title": "Obliviate: Erasing Concepts from Autoregressive Image Generation Models",
           "booktitle": "Computer Vision -- ECCV 2026",
           "year": "2026",
           "publisher": "Springer Nature Switzerland",
-          "address": "Cham",
           "pages": "665--683",
           "isbn": "978-3-032-37324-3"
         }
