@@ -204,7 +204,22 @@
         }
       ],
       "image": "/images/publications/plw1.png",
-      "imageHover": "/images/publications/plw2.png"
+      "imageHover": "/images/publications/plw2.png",
+      "bibtex": {
+        "data": {
+          "@misc": "braun2026poisoned",
+          "title": "The Poisoned Conversation: Privacy-Leaking Watermarks in Unified Multimodal Models",
+          "author": "Braun, Tobias and Grebe, Jonas Henry and Sivic, Emil and Gordillo, Patrick Mohr and Shakibania, Hossein and Rohrbach, Marcus and Rohrbach, Anna",
+          "year": "2026",
+          "eprint": "2610.05453",
+          "archivePrefix": "arXiv",
+          "primaryClass": "cs.CR",
+          "url": "https://arxiv.org/abs/2610.05453"
+        }
+      },
+      "abstract": "We introduce Privacy-Leaking Watermarks (PLWs): a poisoned unified multimodal model hides an invisible watermark in later, unrelated images whenever a sensitive topic, like mental health or religion, came up earlier in the chat. On BAGEL and OmniGen2 across 13 sensitive-attribute triggers, PLWs reach up to 100% TPR at 1% FPR while the model still behaves normally.",
+      "projectPage": "https://jonasgrebe.github.io/research/projects/plw/",
+      "pdf": "https://arxiv.org/abs/2610.05453"
     },
     {
       "title": "CDAN: Convolutional dense attention-guided network for low-light image enhancement",

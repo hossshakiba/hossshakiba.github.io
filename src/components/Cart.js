@@ -37,7 +37,7 @@ const Cart = (props) => {
 
   return (
     <div
-      className={`group relative shadow-4xl md:hover:shadow-3xl cursor-pointer grid self-center sm:grid-cols-3 mb-4 md:mb-8 w-full md:w-[90%] lg:w-[80%] xl:w-[85%] 2xl:w-[70%] p-4 md:p-5 rounded-lg border lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1 lg:hover:scale-[1.01] ${
+      className={`group relative shadow-4xl md:hover:shadow-3xl cursor-pointer grid self-center sm:grid-cols-3 mb-4 md:mb-8 w-full md:w-[90%] lg:w-[80%] xl:w-[85%] 2xl:w-[70%] p-4 md:p-5 rounded-lg border lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1 ${
         featured
           ? 'pub-featured'
           : 'theme-surface'
