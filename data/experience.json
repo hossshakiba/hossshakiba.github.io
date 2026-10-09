@@ -15,7 +15,7 @@
             "focus": "Multimodal AI Safety and Reliability",
             "information": [
                 "Co-led VETO and contributed to IRIS, methods for protecting user images against unauthorized editing by unified image-editing models.",
-                "Proposed Obliviate, a concept-erasure method for autoregressive image generation models (ECCV 2026).",
+                "Co-led Obliviate, a concept-erasure method for autoregressive image generation models (ECCV 2026).",
                 "Contributed to ToBAC, the first multimodal backdoor attack on unified autoregressive models (NeurIPS 2026).",
                 "Explored learning and personalizing relational concepts in text-to-image diffusion models."
             ]

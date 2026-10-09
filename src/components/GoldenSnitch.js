@@ -5,7 +5,7 @@ import MagicToast from './MagicToast';
 import { introHand } from './introduction/introSocials';
 
 const FIRST_DELAY_MS = 12000;
-const INTERVAL_MS = 40000;
+const INTERVAL_MS = 4 * 60 * 1000;
 const FLIGHT_MS = 11000;
 const EVADE_RADIUS = 110;
 const MAX_SPEED = 7;

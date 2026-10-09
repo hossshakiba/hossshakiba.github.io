@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { FaQuoteRight } from "react-icons/fa";
 import { IoEarthSharp } from "react-icons/io5";
@@ -18,7 +18,19 @@ const Cart = (props) => {
   const [abstractOpen, setAbstractOpen] = useState(false);
   const featured = Boolean(props.data.featured);
   const hasAbstract = Boolean(props.data.abstract);
-  const useEraseEffect = props.data.hoverEffect === 'erase' && Boolean(props.data.imageHover);
+  const [canHover, setCanHover] = useState(false);
+  const hasEraseEffect = props.data.hoverEffect === 'erase' && Boolean(props.data.imageHover);
+  const useEraseEffect = hasEraseEffect && canHover;
+  const hoverImage = useEraseEffect ? null : props.data.imageHover;
+
+  useEffect(() => {
+    if (!hasEraseEffect) return undefined;
+    const query = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const update = () => setCanHover(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, [hasEraseEffect]);
   const abstractId = `abstract-${(props.data.title || 'paper').replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase()}`;
   const actionButtonClassName =
     "w-fit py-1 px-2 font-semibold text-xs sm:text-sm md:text-base border border-[var(--color-border)] theme-muted rounded-md theme-surface hover:bg-[var(--color-surface-soft)] transition-colors duration-150 flex items-center";
@@ -59,16 +71,16 @@ const Cart = (props) => {
         <div className="relative w-full overflow-hidden rounded-lg theme-surface">
           <Image
             src={BASE_URL + props.data.image}
-            className={`relative z-0 w-full h-auto transition-opacity duration-300 ${props.data.imageHover ? 'group-hover:opacity-0' : ''}`}
+            className={`relative z-0 w-full h-auto transition-opacity duration-300 ${hoverImage ? 'group-hover:opacity-0' : ''}`}
             alt=""
             width={0}
             height={0}
             sizes="(max-width: 640px) 100vw, 33vw"
             style={{ width: '100%', height: 'auto' }}
           />
-          {props.data.imageHover && (
+          {hoverImage && (
             <Image
-              src={BASE_URL + props.data.imageHover}
+              src={BASE_URL + hoverImage}
               fill
               className="object-cover object-center z-[1] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               alt=""
