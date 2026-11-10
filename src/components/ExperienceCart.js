@@ -27,7 +27,9 @@ const ExperienceCart = (props) => {
     const hasAdvisors = advisorList.length > 0;
     const hasMeta = Boolean(hasAdvisors || focus);
     const advisorLabel = advisorList.length > 1 ? 'Advisors' : 'Advisor';
-    const advisorText = advisorList.join(' · ');
+    const advisorItems = advisorList.map((item) =>
+        typeof item === 'string' ? { name: item } : item
+    );
     const imageProps = {
         alt: "",
         src: props.data.logo,
@@ -35,19 +37,29 @@ const ExperienceCart = (props) => {
         width: 200,
         height: 200,
         objectFit: "contain",
-        className: `absolute w-12 md:w-16 lg:w-20 h-auto ${props.data.invertInDarkMode ? 'dark-invert-logo' : ''}`
+        className: `w-full h-auto ${props.data.invertInDarkMode ? 'dark-invert-logo' : ''}`
     };
+    const logo = props.data.logoDark ? (
+        <>
+            <Image {...imageProps} className="w-full h-auto logo-light-variant" />
+            <Image {...imageProps} src={props.data.logoDark} className="w-full h-auto logo-dark-variant" />
+        </>
+    ) : (
+        <Image {...imageProps} />
+    );
 
     return (
-        <div className={`relative theme-card hover:shadow-4xl cursor-pointer mb-8 md:mb-10 w-full sm:w-[78%] xl:w-[68%] 2xl:w-[58%] ${information.length <= 2 ? 'pb-4 md:pb-6 px-3 md:px-5 lg:px-5 pt-3 md:pt-4 lg:pt-4' : 'p-4 md:p-5 lg:p-5'} rounded-xl border lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1 lg:hover:scale-[1.01]`}>
+        <div className={`relative theme-card shadow-4xl md:hover:shadow-3xl cursor-pointer mb-8 md:mb-10 w-full sm:w-[78%] xl:w-[68%] 2xl:w-[58%] ${information.length <= 2 ? 'pb-4 md:pb-6 px-3 md:px-5 lg:px-5 pt-3 md:pt-4 lg:pt-4' : 'p-4 md:p-5 lg:p-5'} rounded-xl border lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1`}>
             <div className="flex">
-                {props.data.url ? (
-                    <a href={props.data.url}>
-                        <Image {...imageProps} />
-                    </a>
-                ) : (
-                    <Image {...imageProps} />
-                )}
+                <div className="absolute flex w-12 md:w-16 lg:w-20 aspect-square [align-items:safe_center]">
+                    {props.data.url ? (
+                        <a href={props.data.url} className="w-full">
+                            {logo}
+                        </a>
+                    ) : (
+                        <div className="w-full">{logo}</div>
+                    )}
+                </div>
                 <div className="theme-heading ml-16 md:ml-20 lg:ml-28 min-w-0 flex-1">
                     <div className="flex items-start justify-between gap-3">
                         <p className="text-[0.92rem] md:text-base xl:text-[1.06rem] 2xl:text-[1.12rem] font-semibold theme-heading leading-snug min-w-0">{props.data.position}</p>
@@ -68,7 +80,23 @@ const ExperienceCart = (props) => {
                             {hasAdvisors && (
                                 <p>
                                     <span className="theme-subtle uppercase tracking-[0.06em] font-semibold mr-2">{advisorLabel}</span>
-                                    <span className="theme-heading">{advisorText}</span>
+                                    <span className="theme-heading">
+                                        {advisorItems.map(({ name, link }, index) => (
+                                            <span key={name}>
+                                                {index > 0 && ' · '}
+                                                {link ? (
+                                                    <a
+                                                        href={link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="transition-colors duration-150 hover:text-[var(--color-accent)]"
+                                                    >
+                                                        {name}
+                                                    </a>
+                                                ) : name}
+                                            </span>
+                                        ))}
+                                    </span>
                                 </p>
                             )}
                             {focus && (

@@ -86,3 +86,24 @@ const Experience = ({ data }) => {
 };
 
 export default Experience;
+
+
+
+
+// {
+//   "position": "Graduate Research Fellow",
+//   "laboratory": "INSAIT",
+//   "url": "https://insait.ai/",
+//   "logo": "/images/experience/insait.png",
+//   "logoDark": "/images/experience/insait-dark.png",
+//   "type": "Sofia, Bulgaria",
+//   "date": "Starting Dec 2026",
+//   "advisors": [
+//       { "name": "Prof. Luc Van Gool", "link": "https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=en" },
+//       { "name": "Dr. Danda Pani Paudel", "link": "https://scholar.google.com/citations?user=W43pvPkAAAAJ&hl=en" }
+//   ],
+//   "focus": "Video Generative Models",
+//   "information": [
+//       "Working on video generation with a focus on physical intelligence."
+//   ]
+// },

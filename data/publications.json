@@ -52,6 +52,55 @@
       "huggingFace": "https://huggingface.co/spaces/Hossshakiba/VETO"
     },
     {
+      "title": "Token by Token, Compromised: Backdoor Vulnerabilities in Unified Autoregressive Models",
+      "venue": "NeurIPS",
+      "year": "2026",
+      "authors": [
+        {
+          "name": "T. Braun",
+          "link": "https://scholar.google.com/citations?user=wqVWJNIAAAAJ&hl=en",
+          "co": true
+        },
+        {
+          "name": "JH. Grebe",
+          "link": "https://scholar.google.com/citations?hl=en&user=dvz7WRQAAAAJ",
+          "co": true
+        },
+        {
+          "name": "H. Shakibania",
+          "link": "https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1",
+          "co": false
+        },
+        {
+          "name": "A. Rohrbach",
+          "link": "https://scholar.google.com/citations?user=GHpxNQIAAAAJ&hl=en",
+          "co": false
+        },
+        {
+          "name": "M. Rohrbach",
+          "link": "https://scholar.google.com/citations?user=3kDtybgAAAAJ&hl=en",
+          "co": false
+        }
+      ],
+      "image": "/images/publications/tobac1.png",
+      "imageHover": "/images/publications/tobac2.png",
+      "bibtex": {
+        "data": {
+          "@misc": "braun2026tokentokencompromisedbackdoor",
+          "title": "Token by Token, Compromised: Backdoor Vulnerabilities in Unified Autoregressive Models",
+          "author": "Tobias Braun and Jonas Henry Grebe and Hossein Shakibania and Anna Rohrbach and Marcus Rohrbach",
+          "year": "2026",
+          "eprint": "2605.19227",
+          "archivePrefix": "arXiv",
+          "primaryclass": "cs.CR",
+          "url": "https://arxiv.org/abs/2605.19227"
+        }
+      },
+      "abstract": "We show that unified autoregressive models can be backdoored so a subtle trigger poisons both image and text outputs. ToBAC is the first such attack, effective via both data poisoning and model-level injection.",
+      "projectPage": "https://jonasgrebe.github.io/research/projects/token-by-token/",
+      "pdf": "https://arxiv.org/abs/2605.19227"
+    },
+    {
       "title": "Obliviate: Erasing Concepts from Autoregressive Image Generation Models",
       "venue": "ECCV",
       "year": "2026",
@@ -112,55 +161,6 @@
       "projectPage": "https://jonasgrebe.github.io/research/projects/obliviate/",
       "pdf": "https://arxiv.org/abs/2606.28643",
       "code": "https://github.com/multimodal-ai-lab/Obliviate"
-    },
-    {
-      "title": "Token by Token, Compromised: Backdoor Vulnerabilities in Unified Autoregressive Models",
-      "venue": "NeurIPS",
-      "year": "2026",
-      "authors": [
-        {
-          "name": "T. Braun",
-          "link": "https://scholar.google.com/citations?user=wqVWJNIAAAAJ&hl=en",
-          "co": true
-        },
-        {
-          "name": "JH. Grebe",
-          "link": "https://scholar.google.com/citations?hl=en&user=dvz7WRQAAAAJ",
-          "co": true
-        },
-        {
-          "name": "H. Shakibania",
-          "link": "https://scholar.google.com/citations?user=huveR90AAAAJ&hl=en&authuser=1",
-          "co": false
-        },
-        {
-          "name": "A. Rohrbach",
-          "link": "https://scholar.google.com/citations?user=GHpxNQIAAAAJ&hl=en",
-          "co": false
-        },
-        {
-          "name": "M. Rohrbach",
-          "link": "https://scholar.google.com/citations?user=3kDtybgAAAAJ&hl=en",
-          "co": false
-        }
-      ],
-      "image": "/images/publications/tobac1.png",
-      "imageHover": "/images/publications/tobac2.png",
-      "bibtex": {
-        "data": {
-          "@misc": "braun2026tokentokencompromisedbackdoor",
-          "title": "Token by Token, Compromised: Backdoor Vulnerabilities in Unified Autoregressive Models",
-          "author": "Tobias Braun and Jonas Henry Grebe and Hossein Shakibania and Anna Rohrbach and Marcus Rohrbach",
-          "year": "2026",
-          "eprint": "2605.19227",
-          "archivePrefix": "arXiv",
-          "primaryclass": "cs.CR",
-          "url": "https://arxiv.org/abs/2605.19227"
-        }
-      },
-      "abstract": "We show that unified autoregressive models can be backdoored so a subtle trigger poisons both image and text outputs. ToBAC is the first such attack, effective via both data poisoning and model-level injection.",
-      "projectPage": "https://jonasgrebe.github.io/research/projects/token-by-token/",
-      "pdf": "https://arxiv.org/abs/2605.19227"
     },
     {
       "title": "The Poisoned Conversation: Privacy-Leaking Watermarks in Unified Multimodal Models",

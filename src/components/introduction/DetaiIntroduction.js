@@ -24,10 +24,10 @@ const DetaiIntroduction = (props) => {
                 <p className="theme-heading text-sm md:text-[0.96rem] 2xl:text-base 3xl:text-lg text-justify mt-2 xl:mt-3 3xl:mt-5">
                     Feel free to reach out. I'm open to collaborations!
                 </p>
-                <p className={`intro-note ${introHand.className}`}>
+                {/* <p className={`intro-note ${introHand.className}`}>
                     <span className="intro-note-mark" aria-hidden>*</span>
                     <span className="intro-note-text">Currently looking for PhD positions — happy to chat.</span>
-                </p>
+                </p> */}
                 </DiscreteDiffusionText>
                 <Hobbies
                     data={props.hobbiesData}

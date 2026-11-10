@@ -1072,6 +1072,15 @@ body {
     filter: brightness(0) invert(1);
   }
 
+  .logo-dark-variant,
+  .dark .logo-light-variant {
+    display: none;
+  }
+
+  .dark .logo-dark-variant {
+    display: block;
+  }
+
   /* Mobile intro social SVGs use #798D9C; in dark mode match prior white glyph look */
   .dark .mobile-intro-social-icon {
     filter: brightness(0) invert(1);

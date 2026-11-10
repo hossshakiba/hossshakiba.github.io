@@ -14,11 +14,10 @@ const HonorsAwards = ({ data }) => {
     <section id="HonorsSection" className="scroll-mt-20 py-10 md:py-16 theme-surface-soft relative overflow-hidden">
       <div className="content-shell">
         <div className="section-heading">
-          <p className="section-kicker flex items-center gap-1.5">
-            <HiSparkles className="text-[var(--color-accent)]" />
-            Highlights
-          </p>
-          <h2 className="section-title">Honors & Achievements</h2>
+          <h2 className="section-title flex items-center gap-2">
+            <HiSparkles className="text-[var(--color-accent)] shrink-0" />
+            Honors & Achievements
+          </h2>
           <div className="section-divider" />
         </div>
 
